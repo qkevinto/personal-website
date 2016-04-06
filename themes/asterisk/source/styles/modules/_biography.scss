@@ -1,0 +1,19 @@
+.Biography {
+  @include section();
+  margin-top: -(rem(96px));
+}
+
+.Biography-avatar {
+  margin-bottom: rem(24px);
+}
+
+.Biography-name {
+  margin: 0 0 rem(8px) 0;
+}
+
+.Biography-role,
+.Biography-work {
+  margin: 0;
+  @include font-size(18px);
+  color: $color-grey;
+}
