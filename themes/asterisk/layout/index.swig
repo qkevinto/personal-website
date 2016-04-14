@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="{{ config.language }}">
   {% include "_partials/head.swig" %}
   <body>
-    {% include "_partials/hero.swig" %}
     <main class="Main">
       <div class="Main-inner">
         {% include "_partials/biography.swig" %}

@@ -2,8 +2,8 @@
  * section
  */
 @mixin section() {
-  padding-top: $section-vertical-spacing;
-  padding-bottom: $section-vertical-spacing;
+  margin-top: $section-vertical-spacing;
+  margin-bottom: $section-vertical-spacing;
 }
 
 /**

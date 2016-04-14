@@ -3,8 +3,8 @@
     {% include "avatar.swig" %}
   </div>
   <div class="Biography-meta">
-    <h1 class="Biography-name">{{ config.author }}</h1>
-    <h2 class="Biography-role">{{ config.role }}</h2>
-    <span class="Biography-work">{{ config.work }}</span>
+    <h1 class="Biography-name">{{ page.name }}</h1>
+    <h2 class="Biography-role">{{ page.role }}</h2>
+    <span class="Biography-work">{{ page.work }}</span>
   </div>
 </header>

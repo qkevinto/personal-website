@@ -3,14 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kevin To - Front-End Developer
-subtitle:
-description:
-role: Front-End Developer
-work: Freelancer.com, Sydney
+title: Kevin To &mdash; Front-End Developer
+description: Kevin To is an experienced Front-End Developer from Sydney, Australia.
 author: Kevin To
-language:
-timezone:
+keyword: Front-End Developer, Web Developer, HTML, CSS, JavaScript, Sydney, Australia
+language: en
+twitter: qkevinto
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
