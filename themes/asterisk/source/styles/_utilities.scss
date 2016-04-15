@@ -1,11 +1,21 @@
+/**
+ * rem - Pixels to rem conversion
+ * @param  {int} $value - pixel unit to be converted
+ * @return {int} - converted rem unit.
+ */
 @function rem($value){
   @return (strip-unit($value)/16) * 1rem;
 }
 
-@function strip-unit($number) {
-  @if type-of($number) == 'number' and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+/**
+ * strip-unit - Strips the unit from a value
+ * @param  {int} $value - A number with units to strip off
+ * @return {int} - Unitless number
+ */
+@function strip-unit($value) {
+  @if type-of($value) == 'number' and not unitless($value) {
+    @return $value / ($value * 0 + 1);
   }
 
-  @return $number;
+  @return $value;
 }
