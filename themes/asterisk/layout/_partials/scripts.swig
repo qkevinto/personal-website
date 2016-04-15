@@ -11,4 +11,3 @@
     s.parentNode.insertBefore(wf, s);
   })();
 </script>
-<script src="/scripts/main.js"></script>
