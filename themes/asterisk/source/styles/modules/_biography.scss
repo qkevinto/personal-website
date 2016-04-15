@@ -8,11 +8,11 @@
 
 .Biography-name {
   margin: 0 0 rem(8px) 0;
+  color: $color-text-dark;
 }
 
 .Biography-role,
 .Biography-work {
   margin: 0;
   @include font-size(18px);
-  color: $color-grey;
 }
