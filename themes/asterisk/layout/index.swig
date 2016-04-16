@@ -4,10 +4,8 @@
   <body>
     <main class="Main">
       <div class="Main-inner">
-        {% include "_partials/biography.swig" %}
-        <article class="Article">
-          {{ page.content }}
-        </article>
+        {% include "_partials/profile.swig" %}
+        {% include "_partials/about.swig" %}
       </div>
     </main>
     {% include "_partials/scripts.swig" %}

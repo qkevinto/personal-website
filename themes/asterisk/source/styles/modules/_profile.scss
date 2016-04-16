@@ -1,18 +1,18 @@
-.Biography {
+.Profile {
   @include section();
 }
 
-.Biography-avatar {
+.Profile-avatar {
   margin-bottom: rem(24px);
 }
 
-.Biography-name {
+.Profile-name {
   margin: 0 0 rem(8px) 0;
   color: $color-text-dark;
 }
 
-.Biography-role,
-.Biography-work {
+.Profile-role,
+.Profile-work {
   margin: 0;
   @include font-size(18px);
 }
