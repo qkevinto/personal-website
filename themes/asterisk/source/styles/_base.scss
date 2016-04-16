@@ -4,7 +4,7 @@ html {
 
 body {
   color: $color-text;
-  font-family: $font-family;
+  font-family: $font-family-fallback;
   font-size: $font-size-base;
   line-height: 1.4;
 }
