@@ -1,12 +1,4 @@
 /**
- * section
- */
-@mixin section() {
-  margin-top: $section-vertical-spacing;
-  margin-bottom: $section-vertical-spacing;
-}
-
-/**
  * font-size
  * @param  {int|list} $font-size - Font size integer or list with line-height.
  */

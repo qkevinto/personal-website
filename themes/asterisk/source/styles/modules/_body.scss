@@ -1,0 +1,7 @@
+.Body {
+  margin: rem(20px);
+
+  @media (min-width: rem(960px)) {
+    margin: rem(40px) rem(20px);
+  }
+}

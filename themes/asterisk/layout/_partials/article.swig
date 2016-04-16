@@ -1,3 +1,3 @@
-<article class="About">
+<article class="Article">
   {{ page.content }}
 </article>
