@@ -65,6 +65,10 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: asterisk
 
+# Autoprefixer
+autoprefixer:
+  browsers: 'last 2 versions'
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

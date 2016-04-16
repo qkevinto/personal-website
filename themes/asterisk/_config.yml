@@ -3,7 +3,3 @@ node_sass:
   outputStyle: compressed
   precision: 5
   sourceComments: false
-
-# Autoprefixer
-autoprefixer:
-  browsers: 'last 2 versions'
