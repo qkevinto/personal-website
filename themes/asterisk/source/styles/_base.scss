@@ -9,10 +9,16 @@ body {
   line-height: 1.4;
 }
 
+h1,
+h2,
+h3 {
+  font-weight: $font-weight-bold;
+}
+
 a {
   position: relative;
   color: $color-text-dark;
-  font-weight: bold;
+  font-weight: $font-weight-bold;
   text-decoration: none;
 
   &::before {
