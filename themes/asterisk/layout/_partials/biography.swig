@@ -5,6 +5,6 @@
   <div class="Biography-meta">
     <h1 class="Biography-name">{{ page.name }}</h1>
     <h2 class="Biography-role">{{ page.role }}</h2>
-    <span class="Biography-work">{{ page.work }}</span>
+    <span class="Biography-work">at {{ page.work }}</span>
   </div>
 </header>

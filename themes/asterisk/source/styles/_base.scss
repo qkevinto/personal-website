@@ -32,4 +32,10 @@ a {
   &:hover::before {
     opacity: 1;
   }
+
+  &:focus {
+    color: $color-text-light;
+    background: $color-text-dark;
+    outline: none;
+  }
 }
