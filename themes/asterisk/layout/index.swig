@@ -12,6 +12,7 @@
         </div>
       </div>
     </main>
+    {% include "_partials/styles.swig" %}
     {% include "_partials/scripts.swig" %}
   </body>
 </html>

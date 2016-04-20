@@ -14,5 +14,4 @@
   <meta name="twitter:description" content="{{ config.description }}">
   <meta name="twitter:image" content="{{ config.url }}{{ page.image }}" />
   <title>{{ config.title }}</title>
-  {% include "styles.swig" %}
 </head>
