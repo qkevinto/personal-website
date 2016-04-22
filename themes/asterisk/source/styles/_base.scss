@@ -1,3 +1,7 @@
+::selection {
+  background: $color-accent-light;
+}
+
 html {
   font-size: 100%;
 }
@@ -21,27 +25,22 @@ a {
   text-decoration: none;
   color: $color-text-dark;
 
-  &::before {
-    opacity: 0;
+  &::after {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: -1;
     width: 100%;
-    height: 2px;
-    background: currentColor;
+    height: 8px;
+    background: $color-accent-gradient;
     content: "";
-    transform-origin: left;
-    transition: 0.3s opacity ease;
+    transform: scaleY(0.1);
+    transform-origin: bottom;
+    transition: 0.3s transform ease;
   }
 
-  &:hover::before {
-    opacity: 1;
-  }
-
-  &:focus {
-    outline: none;
-    color: $color-text-light;
-    background: $color-text-dark;
+  &:hover::after,
+  &:focus::after {
+    transform: scaleY(1);
   }
 }

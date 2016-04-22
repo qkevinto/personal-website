@@ -1,5 +1,10 @@
 .Main {
   max-width: rem(960px);
+  padding: rem(20px);
+
+  @media (min-width: rem(480px)) {
+    padding: rem(60px);
+  }
 }
 
 .Main-inner {

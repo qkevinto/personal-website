@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ config.language }}">
   {% include "_partials/head.swig" %}
-  <body class="Body About">
+  <body class="About">
     <main class="Main">
       <div class="Main-inner">
         <div class="About-profile">
