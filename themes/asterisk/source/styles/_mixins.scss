@@ -5,10 +5,12 @@
 @mixin font-size($font-size) {
   @if type-of($font-size) == "list" {
     font-size: nth($font-size, 1);
+
     @if (length($font-size) > 1) {
       line-height: nth($font-size, 2);
     }
   }
+
   @else {
     font-size: $font-size;
   }

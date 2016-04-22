@@ -1,0 +1,47 @@
+{
+  "rules": {
+    "block-no-empty": true,
+    "color-no-invalid-hex": true,
+    "declaration-colon-space-after": "always",
+    "indentation": 2,
+    "max-empty-lines": 1,
+    "unit-whitelist": ["em", "rem", "%", "s", "px"],
+    "declaration-block-semicolon-newline-after": "always",
+    "declaration-block-semicolon-space-after": "always-single-line",
+    "declaration-block-semicolon-space-before": "never",
+    "block-closing-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always-multi-line",
+    "block-no-single-line": true,
+    "block-opening-brace-newline-after": "always",
+    "block-opening-brace-space-before": "always",
+    "declaration-block-no-duplicate-properties": true,
+    "declaration-block-properties-order": [[
+      "display", "visibility", "float", "clear", "opacity",
+      "position", "top", "right", "bottom", "left", "z-index", "width",
+      "min-width", "max-width", "height", "min-height", "max-height",
+      "overflow", "margin", "margin-top", "margin-right", "margin-bottom",
+      "margin-left", "padding", "padding-top", "padding-right",
+      "padding-bottom", "padding-left", "border", "border-top",
+      "border-right", "border-bottom", "border-left", "border-width",
+      "border-top-width", "border-right-width", "border-bottom-width",
+      "border-left-width", "border-style", "border-top-style",
+      "border-right-style", "border-bottom-style", "border-left-style",
+      "border-color", "border-top-color", "border-right-color",
+      "border-bottom-color", "border-left-color", "outline", "list-style",
+      "table-layout", "caption-side", "border-collapse", "border-spacing",
+      "empty-cells", "font", "font-family", "font-size", "line-height",
+      "font-weight", "text-align", "text-indent", "text-transform",
+      "text-decoration", "letter-spacing", "word-spacing", "white-space",
+      "vertical-align", "color", "background", "background-color",
+      "background-image", "background-repeat", "background-position",
+      "cursor", "content"], {
+        "unspecified": "bottomAlphabetical"
+      }],
+    "at-rule-empty-line-before": ["always", {
+      "except": ["blockless-group", "first-nested"],
+      "ignore": ["after-comment"]
+    }],
+    "no-eol-whitespace": true,
+
+  }
+}

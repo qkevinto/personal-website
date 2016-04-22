@@ -3,7 +3,7 @@
  * @param  {int} $value - pixel unit to be converted
  * @return {int} - converted rem unit.
  */
-@function rem($value){
+@function rem($value) {
   @return (strip-unit($value)/16) * 1rem;
 }
 

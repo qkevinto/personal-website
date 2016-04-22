@@ -3,10 +3,10 @@ html {
 }
 
 body {
-  color: $color-text;
   font-family: $font-family;
   font-size: $font-size-base;
   line-height: 1.4;
+  color: $color-text;
 }
 
 h1,
@@ -17,22 +17,22 @@ h3 {
 
 a {
   position: relative;
-  color: $color-text-dark;
   font-weight: $font-weight-bold;
   text-decoration: none;
+  color: $color-text-dark;
 
   &::before {
+    opacity: 0;
     position: absolute;
-    z-index: -1;
-    left: 0;
     bottom: 0;
+    left: 0;
+    z-index: -1;
     width: 100%;
     height: 2px;
     background: currentColor;
-    opacity: 0;
-    transition: 0.3s opacity ease;
-    transform-origin: left;
     content: "";
+    transform-origin: left;
+    transition: 0.3s opacity ease;
   }
 
   &:hover::before {
@@ -40,8 +40,8 @@ a {
   }
 
   &:focus {
+    outline: none;
     color: $color-text-light;
     background: $color-text-dark;
-    outline: none;
   }
 }
