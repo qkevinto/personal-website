@@ -8,8 +8,8 @@ work: Freelancer.com, Sydney
 
 You can find more of my stuff on [CodePen](https://codepen.io/qkevinto/) and [GitHub](https://github.com/qkevinto/)!
 
-I make things with CSS, HTML, JavaScript and an eye for design &mdash; I studied and worked as a Designer for about 6 years but now enjoy writing clean and maintainable code and have been doing so for the past 3 years or so.
+I make things with CSS, HTML, JavaScript and an eye for design &mdash; I studied and worked as a Designer for about 6 years but now enjoy writing clean and maintainable code and have been doing so for the past 2 years or so.
 
-When I’m not crafting websites, I enjoy [photography](https://500px.com/kevinto), traveling, the great outdoors and [reading](https://getpocket.com/@kevinto).
+When I’m not making websites, I enjoy [reading](https://getpocket.com/@kevinto), [photography](https://500px.com/kevinto), traveling and the great outdoors.
 
 Feel free to say g’day at [hello@kevinto.me](mailto://hello@kevinto.me), follow me on [Twitter](https://twitter.com/qkevinto) or connect with me on [LinkedIn](https://au.linkedin.com/in/qkevinto).
