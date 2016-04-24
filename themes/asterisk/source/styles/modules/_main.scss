@@ -1,12 +1,8 @@
 .Main {
-  max-width: rem(960px);
-  padding: rem(20px);
+  display: flex;
+  flex-direction: column;
 
-  @media (min-width: rem(480px)) {
-    padding: rem(60px);
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
   }
-}
-
-.Main-inner {
-  max-width: rem(480px);
 }

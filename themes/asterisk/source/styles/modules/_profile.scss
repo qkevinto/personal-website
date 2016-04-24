@@ -9,6 +9,6 @@
 
 .Profile-role,
 .Profile-work {
-  @include font-size(18px);
+  @include font-size($font-size-normal);
   margin: 0;
 }

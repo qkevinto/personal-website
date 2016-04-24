@@ -3,5 +3,6 @@ Thumbs.db
 db.json
 *.log
 node_modules/
+source/jspm_packages/
 public/
 .deploy*/

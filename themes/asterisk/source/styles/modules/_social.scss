@@ -1,0 +1,58 @@
+.Social {
+  @include font-size($font-size-small);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: rem(16px);
+  font-weight: $font-weight-regular;
+  color: $color-text;
+  background-size: cover;
+  background-position: center center;
+
+  &::after {
+    z-index: 0;
+    height: 100%;
+    transform: scaleY(0);
+  }
+}
+
+.Social--codepen,
+.Social--500px {
+  padding-top: rem(124px);
+  color: $color-text-light;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: $color-grey-light;
+    content: "";
+  }
+}
+
+.Social-header,
+.Social-content {
+  position: relative;
+  z-index: 1;
+}
+
+.Social-header {
+  width: 100%;
+  font-weight: $font-weight-bold;
+}
+
+.Social-username,
+.Social-network {
+  display: inline-block;
+}
+
+.Social-username {
+  margin-bottom: rem(8px);
+}
+
+.Social-network {
+  margin-left: rem(12px);
+}

@@ -1,10 +1,14 @@
 @import "reset";
 @import "utilities";
-@import "variables";
+@import "variables/general";
+@import "variables/colours";
+@import "variables/typography";
 @import "mixins";
-@import "typography";
 @import "base";
-@import "layout/about";
+@import "modules/loader";
 @import "modules/main";
+@import "modules/about";
 @import "modules/profile";
 @import "modules/avatar";
+@import "modules/social-stream";
+@import "modules/social";

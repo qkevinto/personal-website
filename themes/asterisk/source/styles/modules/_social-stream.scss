@@ -1,0 +1,92 @@
+.SocialStream {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  min-height: rem(120px);
+
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background: $color-grey-light;
+    content: "";
+    animation: 1s ease 1 socialStream both;
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    display: none;
+  }
+
+  @media (min-width: $breakpoint) {
+    flex-basis: rem(640px);
+    max-width: 100%;
+
+    &::before,
+    &::after {
+      width: 1px;
+      height: 100%;
+    }
+
+    &::after {
+      display: block;
+      right: 0;
+    }
+  }
+}
+
+.SocialStream-loader {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.SocialStream-list {
+  opacity: 1;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transition: 1s opacity ease;
+}
+
+.SocialStream-list-item {
+  border-bottom: 1px solid $color-grey-light;
+
+  @media (min-width: $breakpoint) {
+    &:first-child {
+      border-top: 1px solid $color-grey-light;
+    }
+  }
+}
+
+.SocialStream-is-loading {
+  align-items: center;
+
+  .SocialStream-loader {
+    display: block;
+  }
+
+  .SocialStream-list {
+    opacity: 0;
+  }
+}
+
+@keyframes socialStream {
+  from {
+    transform: scaleY(0);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
