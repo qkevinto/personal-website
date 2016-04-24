@@ -17,10 +17,7 @@
     animation: 1s ease 1 socialStream both;
   }
 
-  &::before {
-    left: 0;
-  }
-
+  &::before,
   &::after {
     display: none;
   }
@@ -32,12 +29,12 @@
 
     &::before,
     &::after {
+      display: block;
       width: 1px;
       height: 100%;
     }
 
     &::after {
-      display: block;
       right: 0;
     }
   }
@@ -51,22 +48,33 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
+.SocialActivities-header {
+  padding: 0 rem(20px) rem(20px);
+  color: $color-text-dark;
+}
+
+.SocialActivities-heading {
+  @include font-size($font-size-normal);
+}
+
+.SocialActivities-heading,
 .SocialActivities-list {
   opacity: 1;
+  transition: 1s opacity ease;
+}
+
+.SocialActivities-list {
   position: relative;
   margin: 0;
   padding: 0;
   list-style: none;
-  transition: 1s opacity ease;
 }
 
 .SocialActivities-list-item {
   border-bottom: 1px solid $color-grey-light;
 
-  @media (min-width: $breakpoint) {
-    &:first-child {
-      border-top: 1px solid $color-grey-light;
-    }
+  &:first-child {
+    border-top: 1px solid $color-grey-light;
   }
 }
 
@@ -77,6 +85,7 @@
     display: block;
   }
 
+  .SocialActivities-header,
   .SocialActivities-list {
     opacity: 0;
   }

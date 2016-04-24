@@ -2,6 +2,9 @@
   <div class="SocialActivities-loader">
     {% include "loader.swig" %}
   </div>
+  <header class="SocialActivities-header">
+    <h1 class="SocialActivities-heading">Recent social activities</h1>
+  </header>
   <ul class="SocialActivities-list">
     <li class="SocialActivities-list-item" data-social-activities="twitter">
     <li class="SocialActivities-list-item" data-social-activities="codepen">
