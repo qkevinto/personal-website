@@ -1,5 +1,5 @@
 # kto
-Kevin To's personal website, built using static site generator [Hexo](https://hexo.io/), written with SASS and ES6 (with the help of SystemJS and JSPM).
+[Kevin To](http://kevinto.me)'s personal website, built using static site generator [Hexo](https://hexo.io/), written with SASS and ES6 (with the help of SystemJS and JSPM).
 
 ## Plugins
 * [hexo-renderer-sass](https://github.com/knksmith57/hexo-renderer-sass) for Sass CSS preprocessor.
