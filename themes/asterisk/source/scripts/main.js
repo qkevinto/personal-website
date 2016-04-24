@@ -1,3 +1,3 @@
-import socialStream from 'modules/social-stream';
+import socialActivities from 'modules/social-activities';
 
-socialStream();
+socialActivities();

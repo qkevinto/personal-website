@@ -5,7 +5,7 @@ import github from 'modules/github';
 import templater from 'lodash-es/template.js';
 import socialTemplate from './social-template.html!text';
 
-export default function socialStream() {
+export default function socialActivities() {
   const socialPromises = [];
 
   socialPromises.push(twitter({
@@ -16,7 +16,7 @@ export default function socialStream() {
     }
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-stream="twitter"]');
+    const container = document.querySelector('[data-social-activities="twitter"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -31,7 +31,7 @@ export default function socialStream() {
     }
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-stream="500px"]');
+    const container = document.querySelector('[data-social-activities="500px"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -43,7 +43,7 @@ export default function socialStream() {
     count: 1
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-stream="codepen"]');
+    const container = document.querySelector('[data-social-activities="codepen"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -55,7 +55,7 @@ export default function socialStream() {
     count: 1
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-stream="github"]');
+    const container = document.querySelector('[data-social-activities="github"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -64,7 +64,7 @@ export default function socialStream() {
 
   Promise.all(socialPromises)
   .then(() => {
-    const container = document.querySelector('[data-social-stream="container"]');
-    container.classList.remove('SocialStream-is-loading');
+    const container = document.querySelector('[data-social-activities="container"]');
+    container.classList.remove('SocialActivities-is-loading');
   });
 }

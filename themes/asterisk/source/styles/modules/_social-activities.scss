@@ -1,4 +1,4 @@
-.SocialStream {
+.SocialActivities {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -42,7 +42,7 @@
   }
 }
 
-.SocialStream-loader {
+.SocialActivities-loader {
   display: none;
   position: absolute;
   top: 50%;
@@ -50,7 +50,7 @@
   transform: translateX(-50%) translateY(-50%);
 }
 
-.SocialStream-list {
+.SocialActivities-list {
   opacity: 1;
   position: relative;
   margin: 0;
@@ -59,7 +59,7 @@
   transition: 1s opacity ease;
 }
 
-.SocialStream-list-item {
+.SocialActivities-list-item {
   border-bottom: 1px solid $color-grey-light;
 
   @media (min-width: $breakpoint) {
@@ -69,14 +69,14 @@
   }
 }
 
-.SocialStream-is-loading {
+.SocialActivities-is-loading {
   align-items: center;
 
-  .SocialStream-loader {
+  .SocialActivities-loader {
     display: block;
   }
 
-  .SocialStream-list {
+  .SocialActivities-list {
     opacity: 0;
   }
 }
