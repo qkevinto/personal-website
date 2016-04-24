@@ -14,7 +14,7 @@ export default function gitHub(options) {
       const activities = [];
       const slicedResponse = response.slice(0, count);
       const eventType = {
-        'CommitCommentEvent': 'Commit commented',
+        'CommitCommentEvent': 'Commit commented in',
         'CreateEvent': 'Created',
         'DeleteEvent': 'Deleted',
         'ForkEvent': 'Forked',
@@ -25,7 +25,7 @@ export default function gitHub(options) {
         'PublicEvent': 'Made public',
         'PullRequestEvent': 'Made a pull request to',
         'PullRequestReviewCommentEvent': 'Commented on a pull request in',
-        'PushEvent': 'Pushed to',
+        'PushEvent': 'Pushed changes to',
         'ReleaseEvent': 'Created a new release for',
         'WatchEvent': 'Starred'
       };
