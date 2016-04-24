@@ -1,9 +1,9 @@
 .SocialActivities {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   position: relative;
   min-height: rem(120px);
+  padding-top: 0;
 
   &::before,
   &::after {
@@ -28,6 +28,7 @@
   @media (min-width: $breakpoint) {
     flex-basis: rem(640px);
     max-width: 100%;
+    padding-top: rem(60px);
 
     &::before,
     &::after {

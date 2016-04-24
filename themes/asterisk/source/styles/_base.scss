@@ -2,6 +2,11 @@
   background: $color-accent-light;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-size: 100%;
 }
