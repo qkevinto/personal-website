@@ -30,6 +30,7 @@ skip_render:
   - 'jspm_packages/**'
   - 'jspm_config.js'
 include:
+  - '.nojekyll'
   - 'jspm_packages/npm/lodash-es*/_*.js'
 
 # Writing
