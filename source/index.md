@@ -6,7 +6,7 @@ work: Freelancer.com, Sydney
 
 [infasecure.com.au](http://infasecure.com.au/), [spacebarkid.com](http://spacebarkid.com/) and [shannateng.com](http://shannateng.com/) are some things I’ve made, and Freelancer.com in Sydney, Australia is where I work.</p>
 
-You can find more of my stuff on [CodePen](https://codepen.io/qkevinto/) and [GitHub](https://github.com/qkevinto/)!
+You can find more of my stuff on [CodePen](https://codepen.io/qkevinto/) and [GitHub](https://github.com/qkevinto/), including the source for [this site](https://github.com/qkevinto/kto)!
 
 I make things with CSS, HTML, JavaScript and an eye for design &mdash; I studied and worked as a Designer for about 6 years but now enjoy writing clean and maintainable code and have been doing so for the past 2 years or so.
 
