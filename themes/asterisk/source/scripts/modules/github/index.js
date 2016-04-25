@@ -12,9 +12,17 @@ export default function gitHub(options) {
     })
     .then((response) => {
       const activities = [];
+      /**
+       * Since the API call does not have a query to reduce the amount of events
+       * returned, we have to slice the response instead instead.
+       */
       const slicedResponse = response.slice(0, count);
+      /**
+       * Maps a bunch of eventTypes that GitHub returns into some readable
+       * and more coherent strings.
+       */
       const eventType = {
-        'CommitCommentEvent': 'Commit commented in',
+        'CommitCommentEvent': 'Commented on a commit in',
         'CreateEvent': 'Created',
         'DeleteEvent': 'Deleted',
         'ForkEvent': 'Forked',
@@ -22,7 +30,7 @@ export default function gitHub(options) {
         'IssueCommentEvent': 'Changed issue comment in',
         'IssuesEvent': 'Changed an issue in',
         'MemberEvent': 'Changed members in',
-        'PublicEvent': 'Made public',
+        'PublicEvent': 'Made public: ',
         'PullRequestEvent': 'Made a pull request to',
         'PullRequestReviewCommentEvent': 'Commented on a pull request in',
         'PushEvent': 'Pushed changes to',

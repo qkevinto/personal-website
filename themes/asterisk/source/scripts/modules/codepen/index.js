@@ -12,6 +12,10 @@ export default function codepen(options) {
     })
     .then((response) => {
       const activities = [];
+      /**
+       * Since the API call does not have a query to reduce the amount of events
+       * returned, we have to slice the response instead instead.
+       */
       const slicedResponse = response.data.slice(0, count);
 
       slicedResponse.forEach((pen) => {
