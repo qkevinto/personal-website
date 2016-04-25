@@ -12,4 +12,4 @@ I make things with CSS, HTML, JavaScript and an eye for design &mdash; I studied
 
 When I’m not making websites, I enjoy [reading](https://getpocket.com/@kevinto), [photography](https://500px.com/kevinto), traveling and the great outdoors.
 
-Feel free to say g’day at [hello@kevinto.me](mailto://hello@kevinto.me), follow me on [Twitter](https://twitter.com/qkevinto) or connect with me on [LinkedIn](https://au.linkedin.com/in/qkevinto).
+Feel free to say g’day at [hello@kevinto.me](mailto:hello@kevinto.me), follow me on [Twitter](https://twitter.com/qkevinto) or connect with me on [LinkedIn](https://au.linkedin.com/in/qkevinto).
