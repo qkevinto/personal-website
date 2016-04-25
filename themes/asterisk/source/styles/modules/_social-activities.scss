@@ -79,13 +79,10 @@
 }
 
 .SocialActivities-is-loading {
-  align-items: center;
-
   .SocialActivities-loader {
     display: block;
   }
 
-  .SocialActivities-header,
   .SocialActivities-list {
     opacity: 0;
   }
