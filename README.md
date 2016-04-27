@@ -12,6 +12,4 @@
 * `hexo server` to serve site using BrowserSync for development.
 * `hexo generate` to build the site.
 * `hexo clean` to clean the build.
-
-## TODO
-* Write a Hexo plugin to bundle JSPM modules as per the recommended [production workflow](https://github.com/jspm/jspm-cli/blob/master/docs/production-workflows.md).
+* `hexo deploy git` to deploy to GitHub pages.
