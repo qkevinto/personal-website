@@ -1,7 +1,17 @@
+/**
+ * JSPM's Production Workflow: http://jspm.io/docs/production-workflows.html
+ *
+ * This script makes the neccessary modifications to package.json to allow jspm
+ * bundle to run in the public folder directory, then executes jspm bundle with
+ * injection and minifiction options, and does some clean up.
+ */
+
 const exec = require('child_process').exec;
 const fs = require('hexo-fs');
 const nodefs = require('fs');
 
+// Use filter instead of event as hexo seems to fire off the generateAfter event
+// prematurely to and causes race conditions.
 hexo.extend.filter.register('after_generate', () => {
   // Reads package.json
   const packageJson = fs.readFile('package.json');
@@ -32,12 +42,18 @@ hexo.extend.filter.register('after_generate', () => {
           }
           console.log(stdout);
 
+          // Deletes public/jspm_packages as it is no longer needed for production
+          fs.rmdir('public/jspm_packages')
+            .then(() => {
+              console.log('jspm-bundler.js: Removed public/jspm_packages');
+            });
+
           // Deletes public/package.json as it is not needed for production
           nodefs.unlink('public/package.json', () => {
             return Promise.resolve();
           });
 
-          console.log('jspm-bundler.js Finished bundling jspm packages to public/package.json');
+          console.log('jspm-bundler.js: Bundled jspm packages to public/package.json');
         });
       });
   });
