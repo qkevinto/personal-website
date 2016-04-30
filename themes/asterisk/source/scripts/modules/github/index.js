@@ -1,6 +1,15 @@
 import 'whatwg-fetch';
 
-export default function gitHub(options) {
+/**
+ * GitHub social activities parser
+ * @param  {Object} [options={}]     Options object for configuration.
+ * @param  {String} options.username Username for the GitHub account to retrieve
+ *                                   activities from.
+ * @param  {Number} options.count    The number of activities to return.
+ * @return {Promise}                 A promise that is resolved with the social
+ *                                   activities object.
+ */
+export default function github(options) {
   const appURL = 'https://github.com/';
   const network = 'GitHub';
   const username = options.username;
@@ -13,8 +22,8 @@ export default function gitHub(options) {
     .then((response) => {
       const activities = [];
       /**
-       * Since the API call does not have a query to reduce the amount of events
-       * returned, we have to slice the response instead instead.
+       * Since the API call does not have a query to reduce the amount of
+       * activites returned, we have to slice the response to reduce it.
        */
       const slicedResponse = response.slice(0, count);
       /**

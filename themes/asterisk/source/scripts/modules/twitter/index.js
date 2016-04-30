@@ -2,6 +2,18 @@ import 'whatwg-fetch';
 import twitterFetcher from 'twitter-fetcher';
 import striptags from 'striptags';
 
+/**
+ * Twitter social activities parser
+ * @param  {Object} [options={}]        Options object for configuration.
+ * @param  {String} options.username    Username for the Twitter account to
+ *                                      retrieve activities from.
+ * @param  {Number} options.count       The number of activities to return.
+ * @param  {Object} [options.extras={}] Any extra data.
+ * @param  {String} options.extras.id   ID of the Twitter widget used by the
+ *                                      twitterFetch library.
+ * @return {Promise}                    A promise that is resolved with the
+ *                                      social activities object.
+ */
 export default function twitter(options) {
   const network = 'Twitter';
   const username = options.username;
