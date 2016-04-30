@@ -42,7 +42,6 @@
       "except": ["blockless-group", "first-nested"],
       "ignore": ["after-comment"]
     }],
-    "no-eol-whitespace": true,
-
+    "no-eol-whitespace": true
   }
 }
