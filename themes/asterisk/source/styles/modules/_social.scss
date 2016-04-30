@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow-wrap: break-word;
   padding: rem(20px);
   font-weight: $font-weight-regular;
   color: $color-text;
   background-size: cover;
   background-position: center center;
+  hyphens: auto;
+  word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
 
   &::after {
     z-index: 0;
