@@ -35,7 +35,7 @@ export default function codepen(options) {
           background: pen.images.large,
           time: '',
           link: pen.link,
-          modifier: `Social--${network.toLowerCase()}`
+          modifier: 'Social--hasImage'
         };
 
         activities.push(activity);

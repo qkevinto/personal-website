@@ -35,7 +35,7 @@ export default function fiveHundredPx(options) {
           background: photo.image_url,
           time: photo.created_at,
           link: `${appURL}${photo.url}`,
-          modifier: `Social--${network.toLowerCase()}`
+          modifier: 'Social--hasImage'
         };
 
         activities.push(activity);
