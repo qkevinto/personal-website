@@ -2,6 +2,9 @@
   "name": "kto",
   "version": "1.0.0",
   "private": true,
+  "scripts": {
+    "deploy": "hexo clean && hexo g && hexo deploy git"
+  },
   "hexo": {
     "version": "3.2.0"
   },
