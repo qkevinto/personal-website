@@ -4,7 +4,8 @@
 $color-white: rgba(256,256,256,0.9);
 $color-grey-dark: rgba(0,0,0,0.7);
 $color-grey: rgba(0,0,0,0.5);
-$color-grey-light: rgba(0,0,0,0.15);
+$color-grey-light: rgba(0,0,0,0.35);
+$color-grey-xlight: rgba(0,0,0,0.15);
 $color-accent: rgba(221,94,137,0.6);
 $color-accent-light: rgba(247,187,151,0.6);
 $color-accent-gradient: linear-gradient(to right, $color-accent-light , rgba(221,94,137,0.7));
@@ -13,4 +14,6 @@ $color-text-light: $color-white;
 $color-text: $color-grey;
 $color-text-dark: $color-grey-dark;
 
+$color-border: $color-grey-xlight;
+$color-overlay: $color-grey-light;
 $color-shadow: $color-grey-light;
