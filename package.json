@@ -6,6 +6,7 @@
     "version": "3.2.0"
   },
   "dependencies": {
+    "child-process-promise": "^2.0.1",
     "hexo": "^3.2.0",
     "hexo-autoprefixer": "^1.0.0",
     "hexo-browsersync": "^0.2.0",
@@ -16,9 +17,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-sass": "^0.2.0",
-    "hexo-server": "^0.2.0"
-  },
-  "devDependencies": {
+    "hexo-server": "^0.2.0",
     "jspm": "^0.16.33"
   },
   "jspm": {
