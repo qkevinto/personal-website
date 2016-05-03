@@ -10,8 +10,8 @@ const exec = require('child-process-promise').exec;
 const fs = require('hexo-fs');
 const nodefs = require('fs');
 
-// Use filter instead of event as hexo seems to fire off the generateAfter event
-// prematurely to and causes race conditions.
+// Use filter instead of event as a filter will wait for a promise to be
+// resolved before proceeding.
 hexo.extend.filter.register('after_generate', () => {
   // Reads package.json
   const packageJson = fs.readFile('package.json');
