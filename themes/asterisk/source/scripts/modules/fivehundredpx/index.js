@@ -33,7 +33,6 @@ export default function fiveHundredPx(options) {
           network: network,
           content: photo.description,
           background: photo.image_url,
-          time: photo.created_at,
           link: `${appURL}${photo.url}`,
           modifier: 'Social--hasImage'
         };
@@ -42,5 +41,15 @@ export default function fiveHundredPx(options) {
       });
 
       return Promise.resolve(activities);
+    })
+    .catch(() => {
+      return Promise.resolve([{
+        username: username,
+        network: network,
+        content: 'Uh oh, something went wrong whilst trying to retrieving social activity.',
+        background: '',
+        link: '#0',
+        modifier: ''
+      }]);
     });
 }

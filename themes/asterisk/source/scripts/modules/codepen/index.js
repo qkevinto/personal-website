@@ -33,7 +33,6 @@ export default function codepen(options) {
           network: network,
           content: striptags(pen.details),
           background: pen.images.large,
-          time: '',
           link: pen.link,
           modifier: 'Social--hasImage'
         };
@@ -42,5 +41,15 @@ export default function codepen(options) {
       });
 
       return Promise.resolve(activities);
+    })
+    .catch(() => {
+      return Promise.resolve([{
+        username: username,
+        network: network,
+        content: 'Uh oh, something went wrong whilst trying to retrieving social activity.',
+        background: '',
+        link: '#0',
+        modifier: ''
+      }]);
     });
 }

@@ -1,4 +1,4 @@
-<a href="<%= link %>" class="Social <%= modifier %>" aria-label="<%= username %> on <%= network %>: <%= content %>" target="_blank" <% if (background) { %> style="background-image: url(<%= background %>)"<% } %>>
+<a href="<%= link %>" class="Social<% if (modifier) { %> <%= modifier %> <% } %>" aria-label="<%= username %> on <%= network %>: <%= content %>"<% if (background) { %> style="background-image: url(<%= background %>)"<% } %>>
   <div class="Social-header">
     <span class="Social-username"><%= username %></span>
     <span class="Social-network"><%= network %></span>

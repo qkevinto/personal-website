@@ -53,14 +53,23 @@ export default function github(options) {
           network: network,
           content: `${eventType[event.type]} ${event.repo.name}`,
           background: '',
-          time: event.created_at,
           link: `${appURL}${event.repo.name}`,
-          modifier: `Social--${network.toLowerCase()}`
+          modifier: ''
         };
 
         activities.push(activity);
       });
 
       return Promise.resolve(activities);
+    })
+    .catch(() => {
+      return Promise.resolve([{
+        username: username,
+        network: network,
+        content: 'Uh oh, something went wrong whilst trying to retrieving social activity.',
+        background: '',
+        link: '#0',
+        modifier: ''
+      }]);
     });
 }

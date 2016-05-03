@@ -48,14 +48,23 @@ export default function twitter(options) {
         network: network,
         content: striptags(tweet.tweet),
         background: '',
-        time: tweet.time,
         link: tweet.permalinkURL,
-        modifier: `Social--${network.toLowerCase()}`
+        modifier: ''
       };
 
       activities.push(activity);
     });
 
     return Promise.resolve(activities);
+  })
+  .catch(() => {
+    return Promise.resolve([{
+      username: username,
+      network: network,
+      content: 'Uh oh, something went wrong whilst trying to retrieving social activity.',
+      background: '',
+      link: '#0',
+      modifier: ''
+    }]);
   });
 }
