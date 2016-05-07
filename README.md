@@ -9,7 +9,7 @@
 * [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git) for easy deployment to GitHub pages.
 
 ## Usage
-* `hexo server` to serve site using BrowserSync for development.
-* `hexo generate` to build the site.
-* `hexo clean` to clean the build.
-* `hexo deploy git` to deploy to GitHub pages.
+* `npm run s` to serve site using BrowserSync for development.
+* `npm run g` to build the site.
+* `npm run c` to clean the build.
+* `npm run d` to deploy to GitHub pages.

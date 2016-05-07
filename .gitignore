@@ -6,3 +6,4 @@ node_modules/
 source/jspm_packages/
 public/
 .deploy*/
+.development

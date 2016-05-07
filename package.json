@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "deploy": "hexo clean && hexo g && hexo deploy git"
+    "d": "rm -rf .development && hexo clean && hexo g && hexo deploy git",
+    "c": "rm -rf .development && hexo clean",
+    "g": "rm -rf .development && hexo generate",
+    "s": "touch .development && hexo server"
   },
   "hexo": {
     "version": "3.2.0"
