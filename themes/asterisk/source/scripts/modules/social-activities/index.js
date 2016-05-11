@@ -2,6 +2,7 @@ import codepen from 'modules/codepen';
 import twitter from 'modules/twitter';
 import fivehundredpx from 'modules/fivehundredpx';
 import github from 'modules/github';
+import trakt from 'modules/trakt';
 import templater from 'lodash-es/template.js';
 import socialTemplate from './social-template.html!text';
 
@@ -37,6 +38,22 @@ export default function socialActivities() {
   })
   .then((activity) => {
     const container = document.querySelector('[data-social-activities="500px"]');
+    const template = templater(socialTemplate);
+    container.innerHTML = template(activity[0]);
+
+    return Promise.resolve();
+  }));
+
+  // Gets Trakt social activities
+  socialPromises.push(trakt({
+    username: 'kevin',
+    count: 1,
+    extras: {
+      clientID: '0e48d28b25a45e5845b4f49b2a079bdacf0f966ce676b4be84002941bc6cee59'
+    }
+  })
+  .then((activity) => {
+    const container = document.querySelector('[data-social-activities="trakt"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 

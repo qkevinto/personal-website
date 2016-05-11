@@ -9,6 +9,7 @@
     <li class="SocialActivities-list-item" data-social-activities="twitter">
     <li class="SocialActivities-list-item" data-social-activities="codepen">
     <li class="SocialActivities-list-item" data-social-activities="github">
+    <li class="SocialActivities-list-item" data-social-activities="trakt">
     <li class="SocialActivities-list-item" data-social-activities="500px">
   </ul>
 </aside>
