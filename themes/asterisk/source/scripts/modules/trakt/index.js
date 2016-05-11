@@ -37,10 +37,10 @@ export default function trakt(options) {
         let link;
 
         if (track.show) {
-          content = `Watched ${track.show.title}`;
+          content = `Watched ${track.show.title}: ${track.episode.title} (${track.episode.season}x${track.episode.number})`;
           link = `${appURL}/shows/${track.show.ids.slug}/seasons/${track.episode.season}/episodes/${track.episode.number}`;
         } else if (track.movie) {
-          content = `Watched ${track.movie.title}`;
+          content = `Watched ${track.movie.title} (${track.movie.year})`;
           link = `${appURL}/movies/${track.movie.ids.slug}`;
         }
 
