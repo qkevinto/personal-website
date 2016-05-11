@@ -1,4 +1,5 @@
 import 'whatwg-fetch';
+import socialParserErrorHandler from 'modules/social-parser-error-handler';
 import striptags from 'striptags';
 
 /**
@@ -43,14 +44,6 @@ export default function codepen(options) {
       return Promise.resolve(activities);
     })
     .catch((error) => {
-      console.error(error);
-      return Promise.resolve([{
-        username: username,
-        network: network,
-        content: 'Uh oh, something went wrong whilst trying to retrieving social activity.',
-        background: '',
-        link: '#0',
-        modifier: ''
-      }]);
+      return socialParserErrorHandler(error, username, network);
     });
 }
