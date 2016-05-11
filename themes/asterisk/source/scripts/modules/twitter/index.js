@@ -57,7 +57,8 @@ export default function twitter(options) {
 
     return Promise.resolve(activities);
   })
-  .catch(() => {
+  .catch((error) => {
+    console.error(error);
     return Promise.resolve([{
       username: username,
       network: network,
