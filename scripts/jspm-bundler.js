@@ -34,31 +34,45 @@ hexo.extend.filter.register('after_generate', () => {
           json.jspm.configFile = configFile.replace(regex, '');
 
           // Writes the modified package.json to the public folder
-          return fs.writeFile('public/package.json', JSON.stringify(json, null, 2))
+          return fs.writeFile('public/package.json',
+            JSON.stringify(json, null, 2))
             .then(() => {
               // Runs jspm bundle
-              return exec('jspm bundle scripts/main scripts/main-bundle.js --inject --minify', {
+              return exec('jspm bundle scripts/main scripts/main-bundle.js ' +
+              '--inject --minify', {
                 cwd: './public/'
               })
-                .then((result) => {
-                  console.log(result.stdout);
-                  console.log('jspm-bundler.js: Bundled jspm packages to public/scripts/main-bundle.js');
+              .then((result) => {
+                console.log(result.stdout);
+                console.log('jspm-bundler.js: Bundled jspm packages to ' +
+                  'public/scripts/main-bundle.js');
 
-                  // Deletes public/jspm_packages as it is no longer needed for production
-                  return fs.rmdir('public/jspm_packages')
-                    .then(() => {
-                      console.log('jspm-bundler.js: Removed public/jspm_packages');
+                // Deletes public/jspm_packages as it is no longer needed for
+                // production
+                return fs.rmdir('public/jspm_packages')
+                  .then(() => {
+                    console.log(
+                      'jspm-bundler.js: Removed public/jspm_packages');
+                    return Promise.resolve();
+                  })
+                  .then(() => {
+                    return fs.rmdir('public/scripts/modules')
+                      .then(() => {
+                        console.log(
+                          'jspm-bundler.js: Removed public/scripts/modules');
+                        return Promise.resolve();
+                      });
+                  })
+                  .then(() => {
+                    return nodefs.unlink('public/package.json', () => {
+                      console.log(
+                        'jspm-bundler.js: Removed public/package.json');
                       return Promise.resolve();
                     });
-                })
-                .catch((err) => {
-                  console.error(err);
-                });
-            })
-            .then(() => {
-              // Deletes public/package.json as it is not needed for production
-              return nodefs.unlink('public/package.json', () => {
-                console.log('jspm-bundler.js: Removed public/package.json');
+                  });
+              })
+              .catch((err) => {
+                console.error(err);
               });
             });
         });
