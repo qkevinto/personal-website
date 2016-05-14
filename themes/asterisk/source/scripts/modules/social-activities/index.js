@@ -21,7 +21,8 @@ export default function socialActivities() {
     }
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-activities="twitter"]');
+    const container =
+      document.querySelector('[data-social-activities="twitter"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -37,7 +38,8 @@ export default function socialActivities() {
     }
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-activities="500px"]');
+    const container =
+      document.querySelector('[data-social-activities="500px"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -49,11 +51,13 @@ export default function socialActivities() {
     username: 'kevin',
     count: 1,
     extras: {
-      clientID: '0e48d28b25a45e5845b4f49b2a079bdacf0f966ce676b4be84002941bc6cee59'
+      clientID:
+        '0e48d28b25a45e5845b4f49b2a079bdacf0f966ce676b4be84002941bc6cee59'
     }
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-activities="trakt"]');
+    const container =
+      document.querySelector('[data-social-activities="trakt"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -66,7 +70,8 @@ export default function socialActivities() {
     count: 1
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-activities="codepen"]');
+    const container =
+      document.querySelector('[data-social-activities="codepen"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -79,7 +84,8 @@ export default function socialActivities() {
     count: 1
   })
   .then((activity) => {
-    const container = document.querySelector('[data-social-activities="github"]');
+    const container =
+      document.querySelector('[data-social-activities="github"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -90,7 +96,8 @@ export default function socialActivities() {
   // show the social content.
   Promise.all(socialPromises)
   .then(() => {
-    const container = document.querySelector('[data-social-activities="container"]');
+    const container =
+      document.querySelector('[data-social-activities="container"]');
     container.classList.remove('SocialActivities-is-loading');
   });
 }

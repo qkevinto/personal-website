@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
+import socialParser from 'modules/social-parser';
 
 /**
  * Trakt social activities parser
@@ -26,39 +27,36 @@ export default function trakt(options) {
       'trakt-api-key': clientID
     }
   })
-    .then((response) => {
-      return response.json();
-    })
-    .then((response) => {
-      const activities = [];
-
-      response.forEach((track) => {
-        let content;
-        let link;
-
-        if (track.show) {
-          content = `Watched ${track.show.title}: ${track.episode.title} (${track.episode.season}x${track.episode.number})`;
-          link = `${appURL}/shows/${track.show.ids.slug}/seasons/${track.episode.season}/episodes/${track.episode.number}`;
-        } else if (track.movie) {
-          content = `Watched ${track.movie.title} (${track.movie.year})`;
-          link = `${appURL}/movies/${track.movie.ids.slug}`;
+  .then((response) => {
+    return response.json();
+  })
+  .then((response) => {
+    return socialParser(response, {
+      username: () => { return username; },
+      network: () => { return network; },
+      content: response => {
+        if (response.show) {
+          return `Watched ${response.show.title}: ` +
+            `${response.episode.title} (${response.episode.season}x` +
+            `${response.episode.number})`;
+        } else if (response.movie) {
+          return `Watched ${response.movie.title} ` +
+            `(${response.movie.year})`;
         }
 
-        let activity = {
-          username: username,
-          network: network,
-          content: content,
-          background: '',
-          link: link,
-          modifier: ''
-        };
-
-        activities.push(activity);
-      });
-
-      return Promise.resolve(activities);
-    })
-    .catch((error) => {
-      return socialParserErrorHandler(error, username, network);
+        return content;
+      },
+      link: response => {
+        if (response.show) {
+          return `${appURL}/shows/${response.show.ids.slug}/seasons/` +
+            `${response.episode.season}/episodes/${response.episode.number}`;
+        } else if (response.movie) {
+          return `${appURL}/movies/${response.movie.ids.slug}`;
+        }
+      }
     });
+  })
+  .catch((error) => {
+    return socialParserErrorHandler(error, username, network);
+  });
 }

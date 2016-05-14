@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
+import socialParser from 'modules/social-parser';
 
 /**
  * GitHub social activities parser
@@ -21,12 +22,6 @@ export default function github(options) {
       return response.json();
     })
     .then((response) => {
-      const activities = [];
-      /**
-       * Since the API call does not have a query to reduce the amount of
-       * activites returned, we have to slice the response to reduce it.
-       */
-      const slicedResponse = response.slice(0, count);
       /**
        * Maps a bunch of eventTypes that GitHub returns into some readable
        * and more coherent strings.
@@ -48,20 +43,13 @@ export default function github(options) {
         'WatchEvent': 'Starred'
       };
 
-      slicedResponse.forEach((event) => {
-        let activity = {
-          username: username,
-          network: network,
-          content: `${eventType[event.type]} ${event.repo.name}`,
-          background: '',
-          link: `${appURL}${event.repo.name}`,
-          modifier: ''
-        };
-
-        activities.push(activity);
+      return socialParser(response, {
+        username: () => { return username; },
+        network: () => { return network; },
+        content: response => { return `${eventType[response.type]} ` +
+          `${response.repo.name}`; },
+        link: response => { return `${appURL}${response.repo.name}`; }
       });
-
-      return Promise.resolve(activities);
     })
     .catch((error) => {
       return socialParserErrorHandler(error, username, network);

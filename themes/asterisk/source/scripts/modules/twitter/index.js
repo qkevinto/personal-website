@@ -1,7 +1,7 @@
 import 'whatwg-fetch';
 import twitterFetcher from 'twitter-fetcher';
-import striptags from 'striptags';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
+import socialParser from 'modules/social-parser';
 
 /**
  * Twitter social activities parser
@@ -41,22 +41,12 @@ export default function twitter(options) {
     }
   })
   .then((response) => {
-    const activities = [];
-
-    response.forEach((tweet) => {
-      let activity = {
-        username: username,
-        network: network,
-        content: striptags(tweet.tweet),
-        background: '',
-        link: tweet.permalinkURL,
-        modifier: ''
-      };
-
-      activities.push(activity);
+    return socialParser(response, {
+      username: () => { return username; },
+      network: () => { return network; },
+      content: response => { return response.tweet; },
+      link: response => { return response.permalinkURL; }
     });
-
-    return Promise.resolve(activities);
   })
   .catch((error) => {
     return socialParserErrorHandler(error, username, network);

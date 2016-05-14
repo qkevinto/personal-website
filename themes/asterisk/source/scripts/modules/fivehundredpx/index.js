@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
+import socialParser from 'modules/social-parser';
 
 /**
  * 500px social activities parser
@@ -21,27 +22,20 @@ export default function fiveHundredPx(options) {
   const count = options.count;
   const consumerKey = options.extras.consumerKey;
 
-  return fetch(`https://api.500px.com/v1/photos?feature=user&username=${username}&image_size=4&consumer_key=${consumerKey}&rpp=${count}`)
+  return fetch('https://api.500px.com/v1/photos?feature=user&username=' +
+      `${username}&image_size=4&consumer_key=${consumerKey}&rpp=${count}`)
     .then((response) => {
       return response.json();
     })
     .then((response) => {
-      const activities = [];
-
-      response.photos.forEach((photo) => {
-        let activity = {
-          username: username,
-          network: network,
-          content: photo.description,
-          background: photo.image_url,
-          link: `${appURL}${photo.url}`,
-          modifier: 'Social--hasImage'
-        };
-
-        activities.push(activity);
+      return socialParser(response.photos, {
+        username: () => { return username; },
+        network: () => { return network; },
+        content: response => { return response.description; },
+        background: response => { return response.image_url; },
+        link: response => { return `${appURL}${response.url}`; },
+        modifier: () => { return 'Social--hasImage'; }
       });
-
-      return Promise.resolve(activities);
     })
     .catch((error) => {
       return socialParserErrorHandler(error, username, network);

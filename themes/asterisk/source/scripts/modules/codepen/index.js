@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
-import striptags from 'striptags';
+import socialParser from 'modules/social-parser';
 
 /**
  * CodePen social activities parser
@@ -21,27 +21,14 @@ export default function codepen(options) {
       return response.json();
     })
     .then((response) => {
-      const activities = [];
-      /**
-       * Since the API call does not have a query to reduce the amount of
-       * activites returned, we have to slice the response to reduce it.
-       */
-      const slicedResponse = response.data.slice(0, count);
-
-      slicedResponse.forEach((pen) => {
-        let activity = {
-          username: username,
-          network: network,
-          content: striptags(pen.details),
-          background: pen.images.large,
-          link: pen.link,
-          modifier: 'Social--hasImage'
-        };
-
-        activities.push(activity);
+      return socialParser(response.data, {
+        username: () => { return username; },
+        network: () => { return network; },
+        content: response => { return response.details; },
+        background: response => { return response.images.large; },
+        link: response => { return response.link; },
+        modifier: () => { return 'Social--hasImage'; }
       });
-
-      return Promise.resolve(activities);
     })
     .catch((error) => {
       return socialParserErrorHandler(error, username, network);
