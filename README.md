@@ -1,4 +1,4 @@
-# kto
+# kevinto.me
 [Kevin To](http://kevinto.me)'s personal website, built using static site generator [Hexo](https://hexo.io/), written with SASS and ES6 (with the help of Babel, SystemJS and JSPM).
 
 ## Plugins
