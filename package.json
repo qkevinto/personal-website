@@ -6,10 +6,30 @@
     "d": "rm -rf .development && hexo clean && hexo g && hexo deploy git",
     "c": "rm -rf .development && hexo clean",
     "g": "rm -rf .development && hexo generate",
-    "s": "touch .development && hexo server"
+    "s": "touch .development && hexo server",
+    "test": "ava"
   },
   "hexo": {
     "version": "3.2.0"
+  },
+  "ava": {
+    "files": [
+      "**/*.test.js",
+      "!**/public/**/*",
+      "!**/node_modules/**/*",
+      "!**/jspm_packages/**/*"
+    ],
+    "source": [
+      "**/*.js",
+      "!**/node_modules/**/*",
+      "!**/jspm_packages/**/*"
+    ],
+    "failFast": true,
+    "tap": true,
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
   },
   "dependencies": {
     "child-process-promise": "^2.0.1",
@@ -50,5 +70,9 @@
         "format": "esm"
       }
     }
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "striptags": "^2.1.1"
   }
 }
