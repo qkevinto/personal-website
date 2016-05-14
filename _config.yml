@@ -88,5 +88,5 @@ criticalcss:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:qkevinto/kto.git
+  repo: git@github.com:qkevinto/kevinto.me.git
   branch: gh-pages
