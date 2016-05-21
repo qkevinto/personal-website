@@ -64,20 +64,6 @@ export default function socialActivities() {
     return Promise.resolve();
   }));
 
-  // Gets CodePen social activities
-  socialPromises.push(codepen({
-    username: 'qkevinto',
-    count: 1
-  })
-  .then((activity) => {
-    const container =
-      document.querySelector('[data-social-activities="codepen"]');
-    const template = templater(socialTemplate);
-    container.innerHTML = template(activity[0]);
-
-    return Promise.resolve();
-  }));
-
   // Gets GitHub social activities
   socialPromises.push(github({
     username: 'qkevinto',
