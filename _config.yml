@@ -13,7 +13,8 @@ ga_tracking_id: UA-22787959-1
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://kevinto.me
+url: https://kevinto.me
+enforce_ssl: kevinto.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
