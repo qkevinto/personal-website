@@ -15,6 +15,7 @@
     background: $color-border;
     content: "";
     animation: 1s ease 1 socialStream both;
+    will-change: transform;
   }
 
   &::before,

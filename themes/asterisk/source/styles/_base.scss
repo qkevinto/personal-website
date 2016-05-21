@@ -45,6 +45,7 @@ a {
     transform: scaleY(0.1);
     transform-origin: bottom;
     transition: 0.3s transform ease;
+    will-change: transform;
   }
 
   &:hover::after,

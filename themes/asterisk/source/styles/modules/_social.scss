@@ -10,6 +10,7 @@
   background-size: cover;
   background-position: center center;
   hyphens: auto;
+  will-change: transform;
   word-break: break-all;
   word-break: break-word;
   word-wrap: break-word;
@@ -41,6 +42,7 @@
 .Social-content {
   position: relative;
   z-index: 1;
+  will-change: transform;
 }
 
 .Social-header {
