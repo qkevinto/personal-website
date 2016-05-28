@@ -5,14 +5,14 @@ import striptags from 'striptags';
  * @param  {Array}  responseActivities An array of social activities from API
  *                                     response
  * @param  {Object} map                An object to map the API responses
- * @param  {Number} limit              The maximum amount of activities to
+ * @param  {Number} [limit = 1]        The maximum amount of activities to
  *                                     return
  * @return {Promise}                   A promise to resolve and return the
  *                                     mapped actvities
  */
-export default function socialParser(responseActivities, map, limit) {
+export default function socialParser(responseActivities, map, limit = 1) {
   if (!map) {
-    return Promise.reject();
+    return Promise.reject(new TypeError('No map provided.'));
   }
 
   const activities = [];
