@@ -1,6 +1,5 @@
 import 'whatwg-fetch';
 import twitterFetcher from 'twitter-fetcher';
-import socialParserErrorHandler from 'modules/social-parser-error-handler';
 import socialParser from 'modules/social-parser';
 
 /**
@@ -47,8 +46,5 @@ export default function twitter(options) {
       content: response => { return response.tweet; },
       link: response => { return response.permalinkURL; }
     });
-  })
-  .catch((error) => {
-    return socialParserErrorHandler(error, username, network);
   });
 }

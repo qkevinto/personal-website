@@ -5,6 +5,7 @@ import github from 'modules/github';
 import trakt from 'modules/trakt';
 import templater from 'lodash-es/template.js';
 import socialTemplate from './social-template.html!text';
+import socialParserErrorHandler from 'modules/social-parser-error-handler';
 
 /**
  * Retrieves all social activities
@@ -19,6 +20,9 @@ export default function socialActivities() {
     extras: {
       id: '300888125675278336'
     }
+  })
+  .catch((error) => {
+    return socialParserErrorHandler(error, 'qkevinto', 'Twitter');
   })
   .then((activity) => {
     const container =
@@ -36,6 +40,9 @@ export default function socialActivities() {
     extras: {
       consumerKey: 'TCaLeU8cjcQEAf6oUybAG9bWR8SIfhascBmOBvMV'
     }
+  })
+  .catch((error) => {
+    return socialParserErrorHandler(error, 'kevinto', '500px');
   })
   .then((activity) => {
     const container =
@@ -55,6 +62,9 @@ export default function socialActivities() {
         '0e48d28b25a45e5845b4f49b2a079bdacf0f966ce676b4be84002941bc6cee59'
     }
   })
+  .catch((error) => {
+    return socialParserErrorHandler(error, 'kevin', 'Trakt');
+  })
   .then((activity) => {
     const container =
       document.querySelector('[data-social-activities="trakt"]');
@@ -68,6 +78,9 @@ export default function socialActivities() {
   socialPromises.push(github({
     username: 'qkevinto',
     count: 1
+  })
+  .catch((error) => {
+    return socialParserErrorHandler(error, 'qkevinto', 'GitHub');
   })
   .then((activity) => {
     const container =

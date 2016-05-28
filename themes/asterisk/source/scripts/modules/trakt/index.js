@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import socialParserErrorHandler from 'modules/social-parser-error-handler';
 import socialParser from 'modules/social-parser';
 
 /**
@@ -55,8 +54,5 @@ export default function trakt(options) {
         }
       }
     });
-  })
-  .catch((error) => {
-    return socialParserErrorHandler(error, username, network);
   });
 }

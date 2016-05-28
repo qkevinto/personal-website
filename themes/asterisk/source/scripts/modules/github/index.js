@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import socialParserErrorHandler from 'modules/social-parser-error-handler';
 import socialParser from 'modules/social-parser';
 
 /**
@@ -50,8 +49,5 @@ export default function github(options) {
           `${response.repo.name}`; },
         link: response => { return `${appURL}${response.repo.name}`; }
       });
-    })
-    .catch((error) => {
-      return socialParserErrorHandler(error, username, network);
     });
 }

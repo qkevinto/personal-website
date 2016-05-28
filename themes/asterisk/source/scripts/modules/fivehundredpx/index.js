@@ -1,5 +1,4 @@
 import 'whatwg-fetch';
-import socialParserErrorHandler from 'modules/social-parser-error-handler';
 import socialParser from 'modules/social-parser';
 
 /**
@@ -36,8 +35,5 @@ export default function fiveHundredPx(options) {
         link: response => { return `${appURL}${response.url}`; },
         modifier: () => { return 'Social--hasImage'; }
       });
-    })
-    .catch((error) => {
-      return socialParserErrorHandler(error, username, network);
     });
 }
