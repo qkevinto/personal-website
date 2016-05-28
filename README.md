@@ -10,8 +10,7 @@
 
 ## Usage
 * `npm test` to run tests.
-* `npm test -- --watch` to run tests and watch for changes
-.
+* `npm test -- --watch` to run tests and watch for changes.
 * `npm run s` to serve site using BrowserSync for development.
 * `npm run g` to build the site.
 * `npm run c` to clean the build.
