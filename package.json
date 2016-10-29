@@ -46,6 +46,7 @@
     "hexo-renderer-sass": "^0.2.0",
     "hexo-server": "^0.2.0",
     "jspm": "^0.16.33",
+    "striptags": "^2.1.1",
     "stylelint": "^6.2.2"
   },
   "jspm": {
@@ -72,7 +73,6 @@
     }
   },
   "devDependencies": {
-    "ava": "^0.14.0",
-    "striptags": "^2.1.1"
+    "ava": "^0.14.0"
   }
 }
