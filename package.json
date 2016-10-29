@@ -7,10 +7,11 @@
     "c": "rm -rf .development && hexo clean",
     "g": "rm -rf .development && hexo generate",
     "s": "touch .development && hexo server",
-    "test": "ava"
+    "test": "ava",
+    "postinstall": "jspm install"
   },
   "hexo": {
-    "version": "3.2.0"
+    "version": "3.2.2"
   },
   "ava": {
     "files": [
