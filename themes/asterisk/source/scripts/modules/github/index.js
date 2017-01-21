@@ -14,7 +14,6 @@ export default function github(options) {
   const appURL = 'https://github.com/';
   const network = 'GitHub';
   const username = options.username;
-  const count = options.count;
 
   return fetch(`https://api.github.com/users/${username}/events`)
     .then((response) => {

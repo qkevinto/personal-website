@@ -19,4 +19,4 @@ export default function socialParserErrorHandler(
     link: '#0',
     modifier: ''
   }]);
-};
+}

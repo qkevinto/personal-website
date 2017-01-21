@@ -38,4 +38,4 @@ export default function socialParser(responseActivities, map, limit = 1) {
   });
 
   return Promise.resolve(activities);
-};
+}

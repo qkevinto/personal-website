@@ -1,10 +1,9 @@
-import codepen from 'modules/codepen';
 import twitter from 'modules/twitter';
 import fivehundredpx from 'modules/fivehundredpx';
 import github from 'modules/github';
 import trakt from 'modules/trakt';
 import templater from 'lodash-es/template.js';
-import socialTemplate from './social-template.html!text';
+import socialTemplate from './social-template.html';
 import socialParserErrorHandler from 'modules/social-parser-error-handler';
 
 /**

@@ -20,7 +20,7 @@ export default function twitter(options) {
   const count = options.count;
   const widgetId = options.extras.id;
 
-  return new Promise((resolve, reject) => {
+  return new Promise(resolve => {
     twitterFetcher.fetch({
       'id': widgetId,
       'domId': '',

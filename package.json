@@ -1,14 +1,14 @@
 {
-  "name": "kto",
+  "name": "kevinto.me",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "d": "rm -rf .development && hexo clean && hexo g && hexo deploy git",
-    "c": "rm -rf .development && hexo clean",
-    "g": "rm -rf .development && hexo generate",
-    "s": "touch .development && hexo server",
-    "test": "ava",
-    "postinstall": "jspm install"
+    "d": "NODE_ENV=production && hexo clean && hexo g && hexo deploy git",
+    "c": "hexo clean",
+    "g": "NODE_ENV=development && hexo generate",
+    "g:production": "NODE_ENV=production && hexo generate",
+    "s": "NODE_ENV=development && hexo server",
+    "test": "ava"
   },
   "hexo": {
     "version": "3.2.2"
@@ -17,13 +17,11 @@
     "files": [
       "**/*.test.js",
       "!**/public/**/*",
-      "!**/node_modules/**/*",
-      "!**/jspm_packages/**/*"
+      "!**/node_modules/**/*"
     ],
     "source": [
       "**/*.js",
-      "!**/node_modules/**/*",
-      "!**/jspm_packages/**/*"
+      "!**/node_modules/**/*"
     ],
     "failFast": true,
     "tap": true,
@@ -33,8 +31,13 @@
     "babel": "inherit"
   },
   "dependencies": {
+    "ava": "^0.14.0",
+    "babel-core": "^6.22.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-env": "^1.1.8",
     "child-process-promise": "^2.0.1",
     "eslint": "^2.9.0",
+    "eslint-loader": "^1.6.1",
     "hexo": "^3.2.0",
     "hexo-autoprefixer": "^1.0.0",
     "hexo-browsersync": "^0.2.0",
@@ -46,34 +49,14 @@
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-sass": "^0.2.0",
     "hexo-server": "^0.2.0",
-    "jspm": "^0.16.33",
-    "striptags": "^2.1.1",
-    "stylelint": "^6.2.2"
+    "lodash-es": "^4.17.4",
+    "raw-loader": "^0.5.1",
+    "striptags": "^2.2.1",
+    "stylelint": "^6.2.2",
+    "twitter-fetcher": "^16.0.2",
+    "webpack": "^2.2.0",
+    "webpack-merge": "^2.4.0",
+    "whatwg-fetch": "^2.0.2"
   },
-  "jspm": {
-    "directories": {
-      "baseURL": "source"
-    },
-    "configFile": "source/jspm_config.js",
-    "dependencies": {
-      "lodash-es": "npm:lodash-es@^4.11.1",
-      "striptags": "npm:striptags@^2.1.1",
-      "text": "github:systemjs/plugin-text@^0.0.7",
-      "twitter-fetcher": "npm:twitter-fetcher@^15.0.2",
-      "whatwg-fetch": "npm:whatwg-fetch@^0.11.0"
-    },
-    "devDependencies": {
-      "babel": "npm:babel-core@^5.8.24",
-      "babel-runtime": "npm:babel-runtime@^5.8.24",
-      "core-js": "npm:core-js@^1.1.4"
-    },
-    "overrides": {
-      "npm:lodash-es@4.11.1": {
-        "format": "esm"
-      }
-    }
-  },
-  "devDependencies": {
-    "ava": "^0.14.0"
-  }
+  "devDependencies": {}
 }

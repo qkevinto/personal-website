@@ -1,3 +1,6 @@
+/* global hexo */
+/* eslint-env node */
+
 /**
  * hexo-deployer-git uses hexo-fs copyDir() method which has ignoreHidden set
  * to true by default, hence .nojekyll file doesn't get copied from public/ even

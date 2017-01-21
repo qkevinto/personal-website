@@ -13,7 +13,6 @@ import socialParser from 'modules/social-parser';
 export default function codepen(options) {
   const network = 'CodePen';
   const username = options.username;
-  const count = options.count;
 
   return fetch(`http://cpv2api.com/pens/public/${username}`)
     .then((response) => {

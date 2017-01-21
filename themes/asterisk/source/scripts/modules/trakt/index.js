@@ -17,7 +17,6 @@ export default function trakt(options) {
   const appURL = 'https://trakt.tv';
   const network = 'Trakt';
   const username = options.username;
-  const count = options.count;
   const clientID = options.extras.clientID;
 
   return fetch(`https://api-v2launch.trakt.tv/users/${username}/history`, {
@@ -41,9 +40,9 @@ export default function trakt(options) {
         } else if (response.movie) {
           return `Watched ${response.movie.title} ` +
             `(${response.movie.year})`;
+        } else {
+          throw new TypeError('Activity is not a TV Show or Movie.');
         }
-
-        return content;
       },
       link: response => {
         if (response.show) {

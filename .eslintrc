@@ -20,13 +20,13 @@
   },
   "env": {
     "browser": true,
-    "es6": true,
+    "es6": true
   },
   "ecmaFeatures": {
-    "modules": true,
+    "modules": true
   },
   "parserOptions": {
     "sourceType": "module"
   },
-   extends": "eslint:recommended"
+   "extends": "eslint:recommended"
 }
