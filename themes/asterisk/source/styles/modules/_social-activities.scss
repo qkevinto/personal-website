@@ -1,20 +1,20 @@
 .SocialActivities {
   display: flex;
   flex-direction: column;
-  position: relative;
   min-height: rem(120px);
   padding-top: 0;
+  position: relative;
 
   &::before,
   &::after {
+    animation: 1s ease 1 socialStream both;
+    background: $color-border;
+    content: "";
     display: block;
+    height: 1px;
     position: absolute;
     top: 0;
     width: 100%;
-    height: 1px;
-    background: $color-border;
-    content: "";
-    animation: 1s ease 1 socialStream both;
     will-change: transform;
   }
 
@@ -31,8 +31,8 @@
     &::before,
     &::after {
       display: block;
-      width: 1px;
       height: 100%;
+      width: 1px;
     }
 
     &::before {
@@ -47,15 +47,15 @@
 
 .SocialActivities-loader {
   display: none;
+  left: 50%;
   position: absolute;
   top: 50%;
-  left: 50%;
   transform: translateX(-50%) translateY(-50%);
 }
 
 .SocialActivities-header {
-  padding: 0 rem(20px) rem(20px);
   color: $color-text-dark;
+  padding: 0 rem(20px) rem(20px);
 }
 
 .SocialActivities-heading {
@@ -69,10 +69,10 @@
 }
 
 .SocialActivities-list {
-  position: relative;
+  list-style: none;
   margin: 0;
   padding: 0;
-  list-style: none;
+  position: relative;
 }
 
 .SocialActivities-list-item {
