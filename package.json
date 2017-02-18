@@ -8,6 +8,7 @@
     "g": "NODE_ENV=development && hexo generate",
     "g:production": "NODE_ENV=production && hexo generate",
     "s": "NODE_ENV=development && hexo server",
+    "s:production": "NODE_ENV=production && hexo server",
     "test": "ava"
   },
   "hexo": {
@@ -48,6 +49,7 @@
     "hexo-generator-tag": "^0.2.0",
     "hexo-renderer-marked": "^0.2.10",
     "hexo-renderer-sass": "^0.2.0",
+    "hexo-renderer-webpack-2-advanced": "^0.5.0",
     "hexo-server": "^0.2.0",
     "lodash-es": "^4.17.4",
     "raw-loader": "^0.5.1",
@@ -58,5 +60,7 @@
     "webpack-merge": "^2.4.0",
     "whatwg-fetch": "^2.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "hexo-renderer-marked": "^0.2.11"
+  }
 }

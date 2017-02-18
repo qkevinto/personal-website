@@ -6,4 +6,4 @@
   ga('create', '{{ config.ga_tracking_id }}', 'auto');
   ga('send', 'pageview');
 </script>
-<script src="scripts/main.bundle.js"></script>
+<script src="scripts/main.js"></script>
