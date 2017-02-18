@@ -1,10 +1,10 @@
-import twitter from 'modules/twitter';
-import fivehundredpx from 'modules/fivehundredpx';
-import github from 'modules/github';
-import trakt from 'modules/trakt';
+import twitter from 'twitter';
+import fivehundredpx from 'fivehundredpx';
+import github from 'github';
+import trakt from 'trakt';
 import templater from 'lodash-es/template.js';
 import socialTemplate from './social-template.html';
-import socialParserErrorHandler from 'modules/social-parser-error-handler';
+import socialParserErrorHandler from 'social-parser-error-handler';
 
 /**
  * Retrieves all social activities

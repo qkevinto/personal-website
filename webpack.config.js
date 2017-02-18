@@ -6,12 +6,12 @@ const path = require('path');
 
 function webpackConfigCommon() {
   return {
-    context: path.resolve(__dirname,'public/scripts'),
+    context: path.resolve(__dirname,'themes/asterisk/source/scripts'),
     entry: [ path.resolve(__dirname, 'themes/asterisk/source/scripts/main.js') ],
     resolve: {
       modules: [
-        path.resolve(__dirname, 'public/scripts'),
-        path.resolve(__dirname, 'public/scripts/modules'),
+        path.resolve(__dirname, 'themes/asterisk/source/scripts'),
+        path.resolve(__dirname, 'themes/asterisk/source/scripts/_modules'),
         path.resolve(__dirname, 'node_modules')
       ],
       extensions: ['.js']

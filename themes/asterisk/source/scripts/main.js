@@ -1,3 +1,3 @@
-import socialActivities from 'modules/social-activities';
+import socialActivities from 'social-activities';
 
 socialActivities();

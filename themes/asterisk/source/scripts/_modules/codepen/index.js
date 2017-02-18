@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import socialParser from 'modules/social-parser';
+import socialParser from 'social-parser';
 
 /**
  * CodePen social activities parser

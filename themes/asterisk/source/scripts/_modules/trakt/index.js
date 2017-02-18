@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import socialParser from 'modules/social-parser';
+import socialParser from 'social-parser';
 
 /**
  * Trakt social activities parser

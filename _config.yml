@@ -27,12 +27,8 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
-  - 'jspm_packages/**'
-  - 'jspm_config.js'
 include:
   - '.nojekyll'
-  - 'jspm_packages/npm/lodash-es*/_*.js'
 
 # Writing
 new_post_name: :title.md # File name of new posts

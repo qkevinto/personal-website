@@ -1,6 +1,6 @@
 import 'whatwg-fetch';
 import twitterFetcher from 'twitter-fetcher';
-import socialParser from 'modules/social-parser';
+import socialParser from 'social-parser';
 
 /**
  * Twitter social activities parser

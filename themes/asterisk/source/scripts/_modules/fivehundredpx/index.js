@@ -1,5 +1,5 @@
 import 'whatwg-fetch';
-import socialParser from 'modules/social-parser';
+import socialParser from 'social-parser';
 
 /**
  * 500px social activities parser
