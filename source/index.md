@@ -10,6 +10,6 @@ You can find more of my stuff on [CodePen](https://codepen.io/qkevinto/) and [Gi
 
 I make things with CSS, HTML, JavaScript and an eye for design &mdash; I studied and worked as a Designer for about 6 years but now enjoy building accessible, lean and maintainable Front-end stacks, and have been doing it for the past 3 years or so.
 
-When I’m not making websites, I enjoy [reading](https://getpocket.com/@kevinto), [photography](https://500px.com/kevinto), travelling and the great outdoors.
+When I’m not making websites, I enjoy [reading](https://getpocket.com/@kevinto), [photography](https://www.instagram.com/qkevinto/), travelling and the great outdoors.
 
 Feel free to say g’day at [hello@kevinto.me](mailto:hello@kevinto.me), follow me on [Twitter](https://twitter.com/qkevinto) or connect with me on [LinkedIn](https://au.linkedin.com/in/qkevinto).
