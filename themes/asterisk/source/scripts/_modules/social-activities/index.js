@@ -1,7 +1,7 @@
 import twitter from 'twitter';
-import fivehundredpx from 'fivehundredpx';
 import github from 'github';
 import trakt from 'trakt';
+import instagram from 'instagram';
 import templater from 'lodash-es/template.js';
 import socialTemplate from './social-template.html';
 import socialParserErrorHandler from 'social-parser-error-handler';
@@ -26,26 +26,6 @@ export default function socialActivities() {
   .then((activity) => {
     const container =
       document.querySelector('[data-social-activities="twitter"]');
-    const template = templater(socialTemplate);
-    container.innerHTML = template(activity[0]);
-
-    return Promise.resolve();
-  }));
-
-  // Gets 500px social activities
-  socialPromises.push(fivehundredpx({
-    username: 'kevinto',
-    count: 1,
-    extras: {
-      consumerKey: 'TCaLeU8cjcQEAf6oUybAG9bWR8SIfhascBmOBvMV'
-    }
-  })
-  .catch((error) => {
-    return socialParserErrorHandler(error, 'kevinto', '500px');
-  })
-  .then((activity) => {
-    const container =
-      document.querySelector('[data-social-activities="500px"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
@@ -84,6 +64,20 @@ export default function socialActivities() {
   .then((activity) => {
     const container =
       document.querySelector('[data-social-activities="github"]');
+    const template = templater(socialTemplate);
+    container.innerHTML = template(activity[0]);
+
+    return Promise.resolve();
+  }));
+
+  // Gets Instagram social activities
+  socialPromises.push(instagram()
+  .catch((error) => {
+    return socialParserErrorHandler(error, 'qkevinto', 'Instagram');
+  })
+  .then((activity) => {
+    const container =
+      document.querySelector('[data-social-activities="instagram"]');
     const template = templater(socialTemplate);
     container.innerHTML = template(activity[0]);
 
