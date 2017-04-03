@@ -16,12 +16,14 @@ export default function instagram() {
     })
     .then((response) => {
       return socialParser(response.items, {
-        username: () => { return username; },
-        network: () => { return network; },
-        content: item => { return item.caption.text; },
-        background: item => { return item.images.standard_resolution.url; },
-        link: item => { return item.link; },
-        modifier: () => { return 'Social--hasImage'; }
+        username: () => username,
+        network: () => network,
+        content: item => item.caption.text,
+        background: item => item.images.standard_resolution.url,
+        link: item => item.link,
+        modifier: () => 'Social--hasImage',
+        date: item => new Date(item.caption.created_time * 1000),
+        extras: item => `${item.likes.count} Like${item.likes.count > 1 ? 's' : '' }`
       });
     });
 }

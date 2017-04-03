@@ -6,4 +6,15 @@
   <div class="Social-content">
     <%= content %>
   </div>
+  <% if (date || extras) { %>
+  <div class="Social-footer">
+    <% if (date) { %>
+    <div class="Social-date"><%= date %></div>
+    <% } %>
+    <% if (extras) { %>
+    <div class="Social-extras"><%= extras %></div>
+    <% } %>
+  </div>
+  <% } %>
+
 </a>

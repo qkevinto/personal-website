@@ -1,4 +1,5 @@
 import striptags from 'striptags';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 /**
  * Parse social activities from API response
@@ -31,8 +32,16 @@ export default function socialParser(responseActivities, map, limit = 1) {
       link:
         typeof map.link === 'function' ? map.link(response) : '',
       modifier:
-        typeof map.modifier === 'function' ? map.modifier(response) : ''
+        typeof map.modifier === 'function' ? map.modifier(response) : '',
+      date:
+        typeof map.date === 'function' ? distanceInWordsToNow(map.date(response), {
+          addSuffix: true
+        }) : '',
+      extras:
+        typeof map.extras === 'function' ? map.extras(response) : ''
     };
+
+    console.log(activity.date);
 
     activities.push(activity);
   });

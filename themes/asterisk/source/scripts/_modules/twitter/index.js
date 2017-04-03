@@ -40,11 +40,12 @@ export default function twitter(options) {
     }
   })
   .then((response) => {
+    console.log(response);
     return socialParser(response, {
-      username: () => { return username; },
-      network: () => { return network; },
-      content: response => { return response.tweet; },
-      link: response => { return response.permalinkURL; }
+      username: () => username,
+      network: () => network,
+      content: response => response.tweet,
+      link: response => response.permalinkURL
     });
   });
 }

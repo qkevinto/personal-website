@@ -42,11 +42,12 @@ export default function github(options) {
       };
 
       return socialParser(response, {
-        username: () => { return username; },
-        network: () => { return network; },
-        content: response => { return `${eventType[response.type]} ` +
-          `${response.repo.name}`; },
-        link: response => { return `${appURL}${response.repo.name}`; }
+        username: () => username,
+        network: () => network,
+        content: response => `${eventType[response.type]} ` +
+          `${response.repo.name}`,
+        link: response => `${appURL}${response.repo.name}`,
+        date: response => new Date(response.created_at)
       });
     });
 }

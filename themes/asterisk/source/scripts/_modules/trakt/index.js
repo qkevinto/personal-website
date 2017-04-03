@@ -30,8 +30,8 @@ export default function trakt(options) {
   })
   .then((response) => {
     return socialParser(response, {
-      username: () => { return username; },
-      network: () => { return network; },
+      username: () => username,
+      network: () => network,
       content: response => {
         if (response.show) {
           return `Watched ${response.show.title}: ` +
@@ -51,7 +51,8 @@ export default function trakt(options) {
         } else if (response.movie) {
           return `${appURL}/movies/${response.movie.ids.slug}`;
         }
-      }
+      },
+      date: response => new Date(response.watched_at)
     });
   });
 }

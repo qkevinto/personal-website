@@ -39,7 +39,8 @@
 }
 
 .Social-header,
-.Social-content {
+.Social-content,
+.Social-footer {
   position: relative;
   will-change: transform;
   z-index: 1;
@@ -47,6 +48,7 @@
 
 .Social-header {
   font-weight: $font-weight-bold;
+  margin-bottom: rem(4px);
   width: 100%;
 }
 
@@ -55,10 +57,13 @@
   display: inline-block;
 }
 
-.Social-username {
-  margin-bottom: rem(4px);
-}
-
 .Social-network {
   margin-left: rem(12px);
+}
+
+.Social-footer {
+  @include font-size($font-size-xsmall);
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(4px);
 }
