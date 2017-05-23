@@ -4,7 +4,7 @@ role: Lead Front-end Developer
 work: Okendo, Sydney
 ---
 
-[infasecure.com.au](http://infasecure.com.au/), [spacebarkid.com](http://spacebarkid.com/), and [shannateng.com](http://shannateng.com/) are some things I’ve made, and Okendo in Sydney, Australia is where I currently work. In the past, I've also worked at Freelancer.com and InfaSecure.
+[infasecure.com.au](http://infasecure.com.au/), [spacebarkid.com](http://spacebarkid.com/), and [shannateng.com](http://shannateng.com/) are some things I’ve made, and [Okendo](https://www.okendo.io/) in Sydney, Australia is where I currently work. In the past, I've also worked at Freelancer.com and InfaSecure.
 
 You can find more of my stuff on [CodePen](https://codepen.io/qkevinto/) and [GitHub](https://github.com/qkevinto/), including the source for [this site](https://github.com/qkevinto/kevinto.me)!
 

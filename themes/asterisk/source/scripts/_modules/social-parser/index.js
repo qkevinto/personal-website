@@ -16,6 +16,10 @@ export default function socialParser(responseActivities, map, limit = 1) {
     return Promise.reject(new TypeError('No map provided.'));
   }
 
+  if (!Array.isArray(responseActivities)) {
+    return Promise.reject(responseActivities);
+  }
+
   const activities = [];
   const slicedResponses = responseActivities.slice(0, limit);
 

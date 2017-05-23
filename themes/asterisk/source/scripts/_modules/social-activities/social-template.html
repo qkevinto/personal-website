@@ -6,12 +6,12 @@
   <div class="Social-content">
     <%= content %>
   </div>
-  <% if (date || extras) { %>
+  <% if (typeof date !== 'undefined' || typeof extras !== 'undefined') { %>
   <div class="Social-footer">
-    <% if (date) { %>
+    <% if (typeof date !== 'undefined') { %>
     <div class="Social-date"><%= date %></div>
     <% } %>
-    <% if (extras) { %>
+    <% if (typeof extras !== 'undefined') { %>
     <div class="Social-extras"><%= extras %></div>
     <% } %>
   </div>
