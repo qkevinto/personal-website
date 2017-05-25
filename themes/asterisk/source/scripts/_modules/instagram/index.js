@@ -1,5 +1,6 @@
 import 'whatwg-fetch';
 import socialParser from 'social-parser';
+import truncateString from 'truncate-string';
 
 /**
  * Instagram parser
@@ -18,7 +19,7 @@ export default function instagram() {
       return socialParser(response.items, {
         username: () => username,
         network: () => network,
-        content: item => item.caption.text,
+        content: item => truncateString(item.caption.text, 250),
         background: item => item.images.standard_resolution.url,
         link: item => item.link,
         modifier: () => 'Social--hasImage',
