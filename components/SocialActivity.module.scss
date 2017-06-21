@@ -1,0 +1,79 @@
+@import '../css/variables';
+@import '../css/utilities';
+@import '../css/mixins';
+
+.root {
+  @include font-size($font-size-small);
+  background-position: center center;
+  background-size: cover;
+  color: $color-text;
+  display: flex;
+  flex-direction: column;
+  font-weight: $font-weight-regular;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  padding: rem(20px);
+  position: relative;
+  will-change: transform;
+  word-break: break-all;
+  word-break: break-word; /* stylelint-disable-line declaration-block-no-duplicate-properties */
+  word-wrap: break-word;
+
+  &::after {
+    height: 100%;
+    transform: scaleY(0);
+    z-index: 0;
+  }
+
+  &.has-background {
+    color: $color-text-light;
+    padding-top: rem(124px);
+
+    &::before {
+      background: $color-overlay;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.header,
+.content,
+.footer {
+  position: relative;
+  will-change: transform;
+  z-index: 1;
+}
+
+.header {
+  font-weight: $font-weight-bold;
+  margin-bottom: rem(4px);
+  width: 100%;
+}
+
+.username,
+.network {
+  display: inline-block;
+}
+
+.network {
+  margin-left: rem(12px);
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: rem(8px);
+}
+
+.footer {
+  @include font-size($font-size-xsmall);
+  display: flex;
+  justify-content: space-between;
+  margin-top: rem(4px);
+}

@@ -1,0 +1,11 @@
+@import '../css/variables';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+  @media (min-width: $breakpoint) {
+    flex-direction: row;
+  }
+}

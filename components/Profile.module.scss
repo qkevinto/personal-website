@@ -1,0 +1,18 @@
+@import '../css/variables';
+@import '../css/utilities';
+@import '../css/mixins';
+
+.avatar {
+  margin-bottom: rem(24px);
+}
+
+.name {
+  color: $color-text-dark;
+  margin: 0 0 rem(8px) 0;
+}
+
+.role,
+.work {
+  @include font-size($font-size-normal);
+  margin: 0;
+}
