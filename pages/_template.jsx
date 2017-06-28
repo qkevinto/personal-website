@@ -24,9 +24,9 @@ export default class Template extends React.Component {
             { name: 'author', content: config.siteAuthor },
             { name: 'apple-mobile-web-app-title', content: config.siteTitle },
             { name: 'application-name', content: config.siteTitle },
-            { name: 'msapplication-TileColor', content: '#da532c' },
+            { name: 'msapplication-TileColor', content: config.siteThemeColor },
             { name: 'msapplication-TileImage', content: '/mstile-144x144.png' },
-            { name: 'theme-color', content: '#ffffff' },
+            { name: 'theme-color', content: config.siteThemeColor },
             { name: 'twitter:card', content: 'summary' },
             { name: 'twitter:site', content: `@${config.twitterHandle}` },
             { name: 'twitter:title', content: config.siteTitle },
@@ -51,7 +51,6 @@ export default class Template extends React.Component {
             { rel: 'icon', type: 'image/png', href: '/android-chrome-192x192.png', sizes: '192x192' },
             { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96' },
             { rel: 'icon', type: 'image/png', href: '/favicon-16x16.png', sizes: '16x16' },
-            { rel: 'manifest', href: '/manifest.json' },
             { rel: 'mask-icon', href: '/safari-pinned-tab.svg' },
             { rel: 'canonical', href: config.siteUrl }
           ]}
