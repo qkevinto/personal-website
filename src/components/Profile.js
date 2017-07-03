@@ -17,6 +17,6 @@ export default class Profile extends React.Component {
           <span className={style.work}>at {work}</span>
         </div>
       </header>
-    )
+    );
   }
 }

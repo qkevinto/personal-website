@@ -4,8 +4,9 @@ import style from './SocialActivities.module.scss';
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
 import truncateString from '../utils/truncate-string';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
-export default class SocialActivities extends React.Component {
+export default class Trakt extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,12 +15,8 @@ export default class SocialActivities extends React.Component {
       loading: true,
       error: false,
       username: 'kevin',
-      network: 'Trakt',
-      content: '',
-      background: '',
-      link: '',
-      date: '',
-    }
+      network: 'Trakt'
+    };
   }
 
   componentDidMount() {
@@ -55,15 +52,15 @@ export default class SocialActivities extends React.Component {
               return `${this.state.appURL}/movies/${latestActivity.movie.ids.slug}`;
             }
           })(),
-          date: new Date(latestActivity.watched_at)
-        })
+          metaPrimary: distanceInWordsToNow(new Date(latestActivity.watched_at), {addSuffix: true})
+        });
       })
       .catch(error => {
         console.error(error);
 
         this.setState({
           error: true
-        })
+        });
       });
   }
 
@@ -77,7 +74,7 @@ export default class SocialActivities extends React.Component {
         network={this.state.network}
         content={this.state.content}
         link={this.state.link}
-        date={this.state.date}></SocialActivity>
-    )
+        metaPrimary={this.state.metaPrimary}></SocialActivity>
+    );
   }
 }

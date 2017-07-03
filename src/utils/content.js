@@ -19,3 +19,14 @@ export const about = `
     Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a>, follow me on <a href="https://twitter.com/qkevinto">Twitter</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
   </p>
 `;
+export const siteMetadata = {
+  title: 'Kevin To - Front-end Developer',
+  shortName: 'Kevin To',
+  url: 'https://kevinto.me',
+  description: 'Kevin To is an experienced Front-end Developer from Sydney, Australia.',
+  author: 'Kevin To',
+  keyword: 'Front-end Developer, Web Developer, HTML, CSS, JavaScript, Sydney, Australia',
+  image: avatarUrl,
+  themeColor: '#ffffff',
+  twitterHandle: 'qkevinto'
+};

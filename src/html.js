@@ -1,10 +1,6 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-
-import { prefixLink } from 'gatsby-helpers'
-
-const BUILD_TIME = new Date().getTime()
+import React from 'react';
+import PropTypes from 'prop-types';
+import Helmet from 'react-helmet';
 
 export default class HTML extends React.Component {
   static propTypes = {
@@ -19,7 +15,7 @@ export default class HTML extends React.Component {
       css = (
         <style
           dangerouslySetInnerHTML={{
-            __html: require('!raw!./public/styles.css'),
+            __html: require('!raw!../public/styles.css'),
           }}
         />
       )
@@ -34,16 +30,17 @@ export default class HTML extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
+          {this.props.headComponents}
           {head.title.toComponent()}
           {head.meta.toComponent()}
           {css}
         </head>
         <body>
           <div
-            id="react-mount"
-            dangerouslySetInnerHTML={{ __html: this.props.body }}
+            id="___gatsby"
+            dangerouslySetInnerHTML={{__html: this.props.body}}
           />
-          <script src={prefixLink(`/bundle.js?t=${BUILD_TIME}`)} />
+          {this.props.postBodyComponents}
         </body>
       </html>
     )

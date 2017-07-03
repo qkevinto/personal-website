@@ -5,10 +5,11 @@ import style from './SocialActivities.module.scss';
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
 import truncateString from '../utils/truncate-string';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 const twitterFetcher = typeof window !== 'undefined' ? require('twitter-fetcher') : undefined;
 
-export default class SocialActivities extends React.Component {
+export default class Twitter extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -16,12 +17,8 @@ export default class SocialActivities extends React.Component {
       loading: true,
       error: false,
       username: 'qkevinto',
-      network: 'Twitter',
-      content: '',
-      background: '',
-      link: '',
-      date: '',
-    }
+      network: 'Twitter'
+    };
   }
 
   componentDidMount() {
@@ -48,19 +45,20 @@ export default class SocialActivities extends React.Component {
     })
     .then(response => {
       const latestTweet = response[0];
+
       this.setState({
         loading: false,
         content: latestTweet.tweet,
         link: latestTweet.permalinkURL,
-        date: latestTweet.timestamp
-      })
+        metaPrimary: distanceInWordsToNow(latestTweet.timestamp, {addSuffix: true})
+      });
     })
     .catch(error => {
       console.error(error);
 
       this.setState({
         error: true
-      })
+      });
     });
   }
 
@@ -76,8 +74,8 @@ export default class SocialActivities extends React.Component {
           network={this.state.network}
           content={this.state.content}
           link={this.state.link}
-          date={this.state.date}></SocialActivity>
+          metaPrimary={this.state.metaPrimary}></SocialActivity>
       </div>
-      )
+      );
   }
 }

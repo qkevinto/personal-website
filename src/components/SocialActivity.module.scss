@@ -44,7 +44,7 @@
 
 .header,
 .content,
-.footer {
+.meta {
   position: relative;
   will-change: transform;
   z-index: 1;
@@ -71,7 +71,7 @@
   margin-top: rem(8px);
 }
 
-.footer {
+.meta {
   @include font-size($font-size-xsmall);
   display: flex;
   justify-content: space-between;

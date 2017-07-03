@@ -4,8 +4,9 @@ import style from './SocialActivities.module.scss';
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
 import truncateString from '../utils/truncate-string';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
-export default class SocialActivities extends React.Component {
+export default class Github extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -14,12 +15,7 @@ export default class SocialActivities extends React.Component {
       error: false,
       username: 'qkevinto',
       network: 'GitHub',
-      content: '',
-      background: '',
-      link: '',
-      date: '',
-      extras: ''
-    }
+    };
   }
 
   componentDidMount() {
@@ -53,15 +49,15 @@ export default class SocialActivities extends React.Component {
           loading: false,
           content: `${eventType[latestEvent.type]} ${latestEvent.repo.name}`,
           link: `${this.props.appURL}${latestEvent.repo.name}`,
-          date: new Date(latestEvent.created_at).toString(),
-        })
+          metaPrimary: distanceInWordsToNow(new Date(latestEvent.created_at).toString(), {addSuffix: true})
+        });
       })
       .catch((error) => {
         console.error(error);
 
         this.setState({
           error: true
-        })
+        });
       });
   }
 
@@ -75,7 +71,7 @@ export default class SocialActivities extends React.Component {
         network={this.state.network}
         content={this.state.content}
         link={this.state.link}
-        date={this.state.date}></SocialActivity>
-    )
+        metaPrimary={this.state.metaPrimary}></SocialActivity>
+    );
   }
 }

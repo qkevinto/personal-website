@@ -6,6 +6,7 @@ import Instagram from './Instagram';
 import Github from './Github';
 import Trakt from './Trakt';
 import Twitter from './Twitter';
+import LastFm from './LastFm';
 
 export default class SocialActivities extends React.Component {
   render() {
@@ -25,10 +26,13 @@ export default class SocialActivities extends React.Component {
             <Trakt></Trakt>
           </li>
           <li className={style['list-item']}>
+            <LastFm></LastFm>
+          </li>
+          <li className={style['list-item']}>
             <Twitter></Twitter>
           </li>
         </ul>
       </aside>
-    )
+    );
   }
 }

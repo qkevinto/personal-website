@@ -1,15 +1,16 @@
-import { config } from 'config';
-
 module.exports = {
+  siteMetadata: {
+    title: 'Kevin To - Front-end Developer'
+  },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: config.siteTitle,
-        short_name: config.siteShortName,
+        name: 'Kevin To - Front-end Developer',
+        short_name: 'Kevin To',
         start_url: '/',
-        background_color: config.siteThemeColor,
-        theme_color: config.siteThemeColor,
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
         display: 'minimal-ui',
         icons: [
           {
@@ -50,6 +51,14 @@ module.exports = {
           }
         ]
       },
-    }
+    },
+    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-22787959-1',
+      },
+    },
+    'gatsby-plugin-sass'
   ]
 };

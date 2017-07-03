@@ -4,44 +4,38 @@ import style from './SocialActivities.module.scss';
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
 import truncateString from '../utils/truncate-string';
+import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
-export default class SocialActivities extends React.Component {
+export default class LastFm extends React.Component {
   constructor() {
     super();
     this.state = {
       loading: true,
       error: false,
       username: 'qkevinto',
-      network: 'Instagram',
-      content: '',
-      background: '',
-      link: '',
-      date: '',
-      extras: ''
-    }
+      network: 'last.fm'
+    };
   }
 
   componentDidMount() {
-    fetch('https://pacific-caverns-68032.herokuapp.com/')
+    fetch('https://pacific-caverns-68032.herokuapp.com/last-fm')
       .then(response => response.json())
       .then(response => {
-        const latestPost = response.items[0];
+        const latestTrack = response.recenttracks.track[0];
 
         this.setState({
           loading: false,
-          content: truncateString(latestPost.caption.text, 250),
-          background: latestPost.images.standard_resolution.url,
-          link: latestPost.link,
-          date: new Date(latestPost.caption.created_time * 1000).toString(),
-          extras: `${latestPost.likes.count} Like${latestPost.likes.count > 1 ? 's' : '' }`
-        })
+          content: `${latestTrack.name} - ${latestTrack.artist['#text']}`,
+          link: latestTrack.url,
+          metaPrimary: `${latestTrack['@attr'] && latestTrack['@attr'].nowplaying ? 'Now playing' : distanceInWordsToNow(new Date(latestTrack.date.uts * 1000).toString(), {addSuffix: true})}`,
+        });
       })
       .catch(error => {
         console.error(error);
 
         this.setState({
           error: true
-        })
+        });
       });
   }
 
@@ -56,8 +50,8 @@ export default class SocialActivities extends React.Component {
         content={this.state.content}
         background={this.state.background}
         link={this.state.link}
-        date={this.state.date}
+        metaPrimary={this.state.metaPrimary}
         extras={this.state.extras}></SocialActivity>
-    )
+    );
   }
 }

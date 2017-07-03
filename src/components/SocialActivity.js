@@ -3,13 +3,11 @@ import striptags from 'striptags';
 
 import style from './SocialActivity.module.scss';
 
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import Loader from './Loader';
 
 export default class SocialActivity extends React.Component {
   render() {
     const hasBackground = image =>  image ? `url(${image})` : undefined;
-    const date = distanceInWordsToNow(this.props.date, { addSuffix: true });
 
     return (
       <div>
@@ -44,13 +42,13 @@ export default class SocialActivity extends React.Component {
                   'Uh oh, looks something broke! 💩'
                 ) : striptags(this.props.content)}
               </div>
-              {(typeof this.props.date !== 'undefined' || typeof this.props.extras !== 'undefined') ? (
-                <div className={style.footer}>
-                  {typeof this.props.date !== 'undefined' && this.props.date ? (
-                    <div className={style.date}>{date}</div>
+              {(typeof this.props.metaPrimary !== 'undefined' || typeof this.props.metaSecondary !== 'undefined') ? (
+                <div className={style.meta}>
+                  {typeof this.props.metaPrimary !== 'undefined' && this.props.metaPrimary ? (
+                    <div>{this.props.metaPrimary}</div>
                   ) : undefined}
-                  {typeof this.props.extras !== 'undefined' ? (
-                    <div className={style.extras}>{this.props.extras}</div>
+                  {typeof this.props.metaSecondary !== 'undefined' ? (
+                    <div>{this.props.metaSecondary}</div>
                   ) : undefined}
                 </div>
               ): undefined}
@@ -58,6 +56,6 @@ export default class SocialActivity extends React.Component {
           )
         }
       </div>
-    )
+    );
   }
 }

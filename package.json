@@ -6,18 +6,16 @@
   "dependencies": {
     "date-fns": "^1.28.5",
     "eslint": "^4.0.0",
-    "gatsby": "^0.12.45",
-    "gatsby-plugin-manifest": "^1.0.0-alpha12-alpha.d452aed2",
-    "object-assign": "^4.1.1",
-    "react-ga": "^2.2.0",
+    "gatsby": "next",
+    "gatsby-link": "next",
+    "gatsby-plugin-google-analytics": "next",
+    "gatsby-plugin-manifest": "next",
+    "gatsby-plugin-offline": "next",
+    "gatsby-plugin-sass": "next",
     "react-helmet": "^5.0.3",
-    "react-typography": "^0.15.0",
     "striptags": "^3.0.1",
     "stylelint": "^7.11.1",
-    "twitter-fetcher": "^17.0.0",
-    "typography": "^0.15.8",
-    "typography-breakpoint-constants": "^0.14.0",
-    "typography-plugin-code": "^0.15.9"
+    "twitter-fetcher": "^17.0.0"
   },
   "devDependencies": {
     "gh-pages": "^0.12.0"
@@ -28,10 +26,10 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
-    "deploy": "gatsby build --prefix-links && gh-pages -d public",
+    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write \"pages/*.js\" \"utils/*.js\" \"wrappers/*.js\" \"html.js\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gatsby build",
+    "deploy": "gatsby build && gh-pages -d public"
   }
 }
