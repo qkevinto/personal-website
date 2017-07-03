@@ -18,7 +18,7 @@ export default class Instagram extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://pacific-caverns-68032.herokuapp.com/')
+    fetch('https://pacific-caverns-68032.herokuapp.com/instagram')
       .then(response => response.json())
       .then(response => {
         const latestPost = response.items[0];
