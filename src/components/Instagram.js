@@ -1,9 +1,9 @@
 import React from 'react';
 import style from './SocialActivities.module.scss';
+import ellipsize from 'ellipsize';
 
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
-import truncateString from '../utils/truncate-string';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 export default class Instagram extends React.Component {
@@ -25,7 +25,7 @@ export default class Instagram extends React.Component {
 
         this.setState({
           loading: false,
-          content: truncateString(latestPost.caption.text, 250),
+          content: ellipsize(latestPost.caption.text, 250),
           background: latestPost.images.standard_resolution.url,
           link: latestPost.link,
           metaPrimary: distanceInWordsToNow(new Date(latestPost.caption.created_time * 1000).toString(), {addSuffix: true}),

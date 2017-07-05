@@ -5,6 +5,7 @@
   "author": "Kevin To <qkevinto@gmail.com>",
   "dependencies": {
     "date-fns": "^1.28.5",
+    "ellipsize": "0.0.3",
     "eslint": "^4.0.0",
     "gatsby": "next",
     "gatsby-link": "next",

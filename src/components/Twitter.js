@@ -4,7 +4,6 @@ import style from './SocialActivities.module.scss';
 
 import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
-import truncateString from '../utils/truncate-string';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 const twitterFetcher = typeof window !== 'undefined' ? require('twitter-fetcher') : undefined;
