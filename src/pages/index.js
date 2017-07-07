@@ -1,12 +1,12 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import Main from '../components/Main';
+import Root from '../components/Root';
 
 export default class Index extends React.Component {
   render() {
     return (
-      <Main></Main>
+      <Root></Root>
     );
   }
 }

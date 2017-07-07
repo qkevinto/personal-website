@@ -47,7 +47,7 @@ export default class Github extends React.Component {
         this.setState({
           loading: false,
           content: `${eventType[latestEvent.type]} ${latestEvent.repo.name}`,
-          link: `${this.props.appURL}${latestEvent.repo.name}`,
+          link: `${this.state.appURL}${latestEvent.repo.name}`,
           metaPrimary: distanceInWordsToNow(new Date(latestEvent.created_at).toString(), {addSuffix: true})
         });
       })

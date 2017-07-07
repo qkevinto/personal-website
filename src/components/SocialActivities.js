@@ -13,9 +13,9 @@ export default class SocialActivities extends React.Component {
     return (
       <aside className={style.root} aria-label={name + ' \'s social activities'}>
         <header className={style.header}>
-          <h2 className={style.heading}>Recent social activities</h2>
+          <h2 className={style.heading}>Elsewhere on the internets&hellip;</h2>
         </header>
-        <ul className={style.list} aria-label="Recent social activities">
+        <ul className={style.list} aria-label="Elsewhere on the internets&hellip;">
           <li className={style['list-item']}>
             <Instagram></Instagram>
           </li>
@@ -23,10 +23,10 @@ export default class SocialActivities extends React.Component {
             <Github></Github>
           </li>
           <li className={style['list-item']}>
-            <Trakt></Trakt>
+            <LastFm></LastFm>
           </li>
           <li className={style['list-item']}>
-            <LastFm></LastFm>
+            <Trakt></Trakt>
           </li>
           <li className={style['list-item']}>
             <Twitter></Twitter>
