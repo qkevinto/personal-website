@@ -14,7 +14,7 @@ export default class Profile extends React.Component {
         <div>
           <h1 className={style.name}>{name}</h1>
           <h2 className={style.role}>{role}</h2>
-          <span className={style.work}>at {work}</span>
+          <span className={style.work}>at <span dangerouslySetInnerHTML={{__html: work}}></span></span>
         </div>
       </header>
     );
