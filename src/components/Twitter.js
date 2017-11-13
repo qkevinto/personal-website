@@ -53,7 +53,7 @@ export default class Twitter extends React.Component {
       });
     })
     .catch(error => {
-      console.error(error);
+      throw new Error(error);
 
       this.setState({
         error: true

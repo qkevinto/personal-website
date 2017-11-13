@@ -6,6 +6,8 @@ import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
+const instagramUrl = 'https://www.instagram.com';
+
 export default class Instagram extends React.Component {
   constructor() {
     super();
@@ -21,19 +23,20 @@ export default class Instagram extends React.Component {
     fetch('https://pacific-caverns-68032.herokuapp.com/instagram')
       .then(response => response.json())
       .then(response => {
-        const latestPost = response.items[0];
+        const latestPost = response.user.media.nodes[0];
 
         this.setState({
           loading: false,
-          content: ellipsize(latestPost.caption.text, 250),
-          background: latestPost.images.standard_resolution.url,
-          link: latestPost.link,
-          metaPrimary: distanceInWordsToNow(new Date(latestPost.caption.created_time * 1000).toString(), {addSuffix: true}),
+          content: ellipsize(latestPost.caption, 250),
+          // Get 640x640 thumbnail
+          background: latestPost.thumbnail_resources[4].src,
+          link: `${instagramUrl}/p/${latestPost.code}`,
+          metaPrimary: distanceInWordsToNow(new Date(latestPost.date * 1000).toString(), {addSuffix: true}),
           metaSecondary: `${latestPost.likes.count} Like${latestPost.likes.count > 1 ? 's' : '' }`
         });
       })
       .catch(error => {
-        console.error(error);
+        throw new Error(error);
 
         this.setState({
           error: true
