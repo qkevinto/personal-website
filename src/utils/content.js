@@ -1,10 +1,10 @@
 export const avatarUrl = '/images/avatar.jpg';
 export const name = 'Kevin To';
-export const role = 'Lead Front-end Developer';
-export const work = '<a href="http://www.okendo.io/">Okendo</a>, Sydney';
+export const role = 'Front-end Developer';
+export const work = '<a href="https://upside.com.au/">Upside</a>, Sydney';
 export const about = `
   <p>
-    I’ve also been a <strong>Front-end Developer, Team Lead</strong> at <a href="https://www.freelancer.com/">Freelancer.com</a> and <strong>Front-end Developer</strong> at <a href="http://infasecure.com.au/">InfaSecure</a>.
+    I’ve also been a <strong>Lead Front-end Developer</strong> at <a href="https://www.okendo.io/">Okendo</a>, <strong>Front-end Developer, Team Lead</strong> at <a href="https://www.freelancer.com/">Freelancer.com</a> and <strong>Front-end Developer</strong> at <a href="http://infasecure.com.au/">InfaSecure</a>.
   </p>
   <p>
     You can find some of my stuff on <a href="https://codepen.io/qkevinto/">CodePen</a> and <a href="https://github.com/qkevinto/">GitHub</a>, including the source for <a href="https://github.com/qkevinto/kevinto.me">this site</a>!
