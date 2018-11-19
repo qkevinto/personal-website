@@ -1,6 +1,6 @@
 export const avatarUrl = '/images/avatar.jpg';
 export const name = 'Kevin To';
-export const role = 'Front-end Developer';
+export const role = 'Front-end Engineer';
 export const work = '<a href="https://upside.com.au/">Upside</a>, Sydney';
 export const about = `
   <p>

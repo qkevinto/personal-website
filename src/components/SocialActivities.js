@@ -17,9 +17,6 @@ export default class SocialActivities extends React.Component {
         </header>
         <ul className={style.list} aria-label="Elsewhere on the internets&hellip;">
           <li className={style['list-item']}>
-            <Instagram></Instagram>
-          </li>
-          <li className={style['list-item']}>
             <Github></Github>
           </li>
           <li className={style['list-item']}>
@@ -27,9 +24,6 @@ export default class SocialActivities extends React.Component {
           </li>
           <li className={style['list-item']}>
             <Trakt></Trakt>
-          </li>
-          <li className={style['list-item']}>
-            <Twitter></Twitter>
           </li>
         </ul>
       </aside>
