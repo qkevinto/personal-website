@@ -1,3 +1,5 @@
+const currentDate = new Date();
+const experienceYears =  currentDate.getFullYear() - 2012;
 export const avatarUrl = '/images/avatar.jpg';
 export const name = 'Kevin To';
 export const role = 'Front-end Engineer';
@@ -10,7 +12,7 @@ export const about = `
     You can find some of my stuff on <a href="https://codepen.io/qkevinto/">CodePen</a> and <a href="https://github.com/qkevinto/">GitHub</a>, including the source for <a href="https://github.com/qkevinto/kevinto.me">this site</a>!
   </p>
   <p>
-    I make things with CSS, HTML, JavaScript and background in design — I studied and worked as a Designer for about 6 years and now enjoy building accessible, lean and maintainable Front-end stacks, and have been doing it for the past 4 years or so.
+    I make things with CSS, HTML, JavaScript and background in design — I studied and worked as a Designer for about 6 years and now enjoy building accessible, lean and maintainable Front-end stacks, and have been doing it for the past ${experienceYears} years or so.
   </p>
   <p>
     When I’m not making things for the web, I enjoy <a href="https://getpocket.com/@kevinto">reading</a>, <a href="https://www.instagram.com/qkevinto/">photography</a>, travelling and the great outdoors. I go out exploring, catch the sunrise and take photos almost every weekend! 📷
