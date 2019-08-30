@@ -15,7 +15,7 @@ export const about = `
     I make things with CSS, HTML, JavaScript and background in design — I studied and worked as a Designer for about 6 years and now enjoy building accessible, lean and maintainable Front-end stacks, and have been doing it for the past ${experienceYears} years or so.
   </p>
   <p>
-    When I’m not making things for the web, I enjoy <a href="https://getpocket.com/@kevinto">reading</a>, <a href="https://www.instagram.com/qkevinto/">photography</a>, travelling and the great outdoors. I go out exploring, catch the sunrise and take photos almost every weekend! 📷
+    When I’m not making stuff for the web, I enjoy building and flying drones, tinkering with electronics projects, four-wheel driving, <a href="https://www.instagram.com/qkevinto/">photography</a>, exploring the outdoors and travelling!
   </p>
   <p>
     Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a>, follow me on <a href="https://twitter.com/qkevinto">Twitter</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
