@@ -7,13 +7,11 @@ import Loader from './Loader';
 
 export default class SocialActivity extends React.Component {
   render() {
-    const hasBackground = image =>  image ? `url(${image})` : undefined;
-
     return (
       <div>
         {this.props.loading && !this.props.error ?
           (
-            <div className={`${style.root} ${this.props.background ? style['has-background'] : ''}`}>
+            <div className={`${style.root}`}>
               <div className={style.header}>
                 <span className={style.username}>{this.props.username}</span>
                 <span className={style.network}>{this.props.network}</span>
@@ -26,13 +24,9 @@ export default class SocialActivity extends React.Component {
           (
             <a
               href={this.props.link}
-              className={`${style.root} ${this.props.background ? style['has-background'] : ''}`}
+              className={`${style.root}`}
               aria-label={this.props.username + ' on ' + this.props.network + ': ' + this.props.content}
-              style={
-                {
-                  backgroundImage: hasBackground(this.props.background)
-                }
-              }>
+            >
               <div className={style.header}>
                 <span className={style.username}>{this.props.username}</span>
                 <span className={style.network}>{this.props.network}</span>

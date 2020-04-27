@@ -24,22 +24,6 @@
     transform: scaleY(0);
     z-index: 0;
   }
-
-  &.has-background {
-    color: $color-text-light;
-    padding-top: rem(124px);
-
-    &::before {
-      background: $color-overlay;
-      bottom: 0;
-      content: "";
-      display: block;
-      left: 0;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-  }
 }
 
 .header,

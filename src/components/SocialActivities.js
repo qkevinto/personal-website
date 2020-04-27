@@ -2,10 +2,8 @@ import React from 'react';
 import style from './SocialActivities.module.scss';
 
 import { name } from '../utils/content';
-import Instagram from './Instagram';
 import Github from './Github';
 import Trakt from './Trakt';
-import Twitter from './Twitter';
 import LastFm from './LastFm';
 
 export default class SocialActivities extends React.Component {
