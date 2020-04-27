@@ -2,7 +2,7 @@ const currentDate = new Date();
 const experienceYears =  currentDate.getFullYear() - 2012;
 export const avatarUrl = '/images/avatar.jpg';
 export const name = 'Kevin To';
-export const role = 'Front-end Engineer';
+export const role = 'UI Engineering Team Lead';
 export const work = '<a href="https://nurturecloud.com/">NurtureCloud</a>, Sydney';
 export const about = `
   <p>
