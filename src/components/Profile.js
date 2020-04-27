@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './Profile.module.scss';
 
+import style from './Profile.module.scss';
 import Avatar from './Avatar';
 import { name, role, work } from '../utils/content';
 

@@ -1,9 +1,7 @@
 import React from 'react';
-import style from './SocialActivities.module.scss';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
-import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 export default class Github extends React.Component {
   constructor() {
@@ -48,7 +46,7 @@ export default class Github extends React.Component {
           loading: false,
           content: `${eventType[latestEvent.type]} ${latestEvent.repo.name}`,
           link: `${this.state.appURL}${latestEvent.repo.name}`,
-          metaPrimary: distanceInWordsToNow(new Date(latestEvent.created_at).toString(), {addSuffix: true})
+          metaPrimary: formatDistanceToNow(new Date(latestEvent.created_at), {addSuffix: true})
         });
       })
       .catch((error) => {

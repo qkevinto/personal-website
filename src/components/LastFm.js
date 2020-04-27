@@ -1,9 +1,7 @@
 import React from 'react';
-import style from './SocialActivities.module.scss';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
-import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 
 export default class LastFm extends React.Component {
   constructor() {
@@ -26,7 +24,7 @@ export default class LastFm extends React.Component {
           loading: false,
           content: `${latestTrack.name} - ${latestTrack.artist['#text']}`,
           link: latestTrack.url,
-          metaPrimary: `${latestTrack['@attr'] && latestTrack['@attr'].nowplaying ? 'Now playing' : distanceInWordsToNow(new Date(latestTrack.date.uts * 1000).toString(), {addSuffix: true})}`,
+          metaPrimary: `${latestTrack['@attr'] && latestTrack['@attr'].nowplaying ? 'Now playing' : formatDistanceToNow(new Date(latestTrack.date.uts * 1000), {addSuffix: true})}`,
         });
       })
       .catch(error => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
 
 export default class HTML extends React.Component {
   static propTypes = {
@@ -9,17 +9,6 @@ export default class HTML extends React.Component {
 
   render() {
     const head = Helmet.rewind()
-
-    let css
-    if (process.env.NODE_ENV === 'production') {
-      css = (
-        <style
-          dangerouslySetInnerHTML={{
-            __html: require('!raw!../public/styles.css'),
-          }}
-        />
-      )
-    }
 
     return (
       <html lang="en">
@@ -33,7 +22,6 @@ export default class HTML extends React.Component {
           {this.props.headComponents}
           {head.title.toComponent()}
           {head.meta.toComponent()}
-          {css}
         </head>
         <body>
           <div

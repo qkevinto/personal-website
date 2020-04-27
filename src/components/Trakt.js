@@ -1,9 +1,7 @@
 import React from 'react';
-import style from './SocialActivities.module.scss';
 
-import { name } from '../utils/content';
 import SocialActivity from './SocialActivity';
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 
 export default class Trakt extends React.Component {
   constructor() {
@@ -51,7 +49,7 @@ export default class Trakt extends React.Component {
               return `${this.state.appURL}/movies/${latestActivity.movie.ids.slug}`;
             }
           })(),
-          metaPrimary: distanceInWordsToNow(new Date(latestActivity.watched_at), {addSuffix: true})
+          metaPrimary: formatDistanceToNow(new Date(latestActivity.watched_at), {addSuffix: true})
         });
       })
       .catch(error => {

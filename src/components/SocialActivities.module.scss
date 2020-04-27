@@ -11,7 +11,7 @@
 
   &::before,
   &::after {
-    animation: 1s ease 1 socialStream both;
+    animation: socialStream 1s ease 1 both;
     background: $color-border;
     content: "";
     display: block;

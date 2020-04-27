@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './SocialActivities.module.scss';
 
+import style from './SocialActivities.module.scss';
 import { name } from '../utils/content';
 import Github from './Github';
 import Trakt from './Trakt';
@@ -14,13 +14,13 @@ export default class SocialActivities extends React.Component {
           <h2 className={style.heading}>Elsewhere on the internets&hellip;</h2>
         </header>
         <ul className={style.list} aria-label="Elsewhere on the internets&hellip;">
-          <li className={style['list-item']}>
+          <li className={style.listItem}>
             <Github></Github>
           </li>
-          <li className={style['list-item']}>
+          <li className={style.listItem}>
             <LastFm></LastFm>
           </li>
-          <li className={style['list-item']}>
+          <li className={style.listItem}>
             <Trakt></Trakt>
           </li>
         </ul>

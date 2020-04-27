@@ -1,8 +1,7 @@
 import React from 'react';
-import style from './Avatar.module.scss';
 
+import style from './Avatar.module.scss';
 import { avatarUrl, name } from '../utils/content';
-import Profile from './Profile';
 
 export default class Avatar extends React.Component {
   render() {

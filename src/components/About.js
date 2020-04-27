@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './About.module.scss';
 
+import style from './About.module.scss';
 import { about } from '../utils/content';
 import Profile from './Profile';
 

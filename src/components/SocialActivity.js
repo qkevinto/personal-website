@@ -2,7 +2,6 @@ import React from 'react';
 import striptags from 'striptags';
 
 import style from './SocialActivity.module.scss';
-
 import Loader from './Loader';
 
 export default class SocialActivity extends React.Component {

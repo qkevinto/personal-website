@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'gatsby-link';
-import Helmet from 'react-helmet';
+import { Helmet } from 'react-helmet';
+
 import { siteMetadata } from '../utils/siteMetadata';
 
 import '../css/main.scss';
 
-export default class Template extends React.Component {
+export default class Layout extends React.Component {
   static propTypes = {
     children: PropTypes.any,
     data: PropTypes.any
@@ -55,7 +55,7 @@ export default class Template extends React.Component {
             {rel: 'canonical', href: siteMetadata.url}
           ]}
         />
-        {this.props.children()}
+        {this.props.children}
       </div>
     );
   }

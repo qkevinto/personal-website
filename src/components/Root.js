@@ -1,6 +1,6 @@
 import React from 'react';
-import style from './Root.module.scss';
 
+import style from './Root.module.scss';
 import About from '../components/About';
 import SocialActivities from '../components/SocialActivities';
 
