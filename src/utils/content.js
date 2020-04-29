@@ -18,6 +18,6 @@ export const about = `
     When I’m not making stuff for the web, I enjoy building and flying drones, tinkering with electronics projects, four-wheel driving, <a href="https://www.instagram.com/qkevinto/">photography</a>, exploring the outdoors and travelling!
   </p>
   <p>
-    Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a>, follow me on <a href="https://twitter.com/qkevinto">Twitter</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
+    Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
   </p>
 `;
