@@ -4,25 +4,25 @@
   "version": "2.0.0",
   "author": "Kevin To <qkevinto@gmail.com>",
   "dependencies": {
-    "date-fns": "^2.12.0",
+    "date-fns": "^2.23.0",
     "ellipsize": "^0.1.0",
-    "eslint": "^6.8.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-helmet": "^6.0.0",
-    "striptags": "^3.0.1"
+    "eslint": "^7.31.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "striptags": "^3.2.0"
   },
   "devDependencies": {
-    "gatsby": "^2.21.1",
-    "gatsby-link": "^2.4.0",
-    "gatsby-plugin-google-analytics": "^2.3.0",
-    "gatsby-plugin-manifest": "^2.4.1",
-    "gatsby-plugin-offline": "^3.2.0",
-    "gatsby-plugin-sass": "^2.3.0",
+    "gatsby": "^3.10.1",
+    "gatsby-link": "^3.10.0",
+    "gatsby-plugin-google-analytics": "^3.10.0",
+    "gatsby-plugin-manifest": "^3.10.0",
+    "gatsby-plugin-offline": "^4.10.0",
+    "gatsby-plugin-sass": "^4.10.0",
     "gh-pages": "^2.2.0",
-    "node-sass": "^4.14.0",
-    "stylelint": "^13.3.3",
-    "webpack": "^4.43.0"
+    "node-sass": "^6.0.1",
+    "stylelint": "^13.13.1",
+    "webpack": "^5.46.0"
   },
   "keywords": [
     "gatsby"
@@ -34,6 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public"
+    "deploy": "gatsby build && gh-pages -d public",
+    "clean": "gatsby clean"
   }
 }

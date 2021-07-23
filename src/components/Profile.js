@@ -1,20 +1,20 @@
 import React from 'react';
 
-import style from './Profile.module.scss';
+import { avatar, name, role, work } from './Profile.module.scss';
 import Avatar from './Avatar';
-import { name, role, work } from '../utils/content';
+import * as content from '../utils/content';
 
 export default class Profile extends React.Component {
   render() {
     return (
       <header>
-        <div className={style.avatar}>
+        <div className={avatar}>
           <Avatar></Avatar>
         </div>
         <div>
-          <h1 className={style.name}>{name}</h1>
-          <h2 className={style.role}>{role}</h2>
-          <span className={style.work}>at <span dangerouslySetInnerHTML={{__html: work}}></span></span>
+          <h1 className={name}>{content.name}</h1>
+          <h2 className={role}>{content.role}</h2>
+          <span className={work}>at <span dangerouslySetInnerHTML={{__html: content.work}}></span></span>
         </div>
       </header>
     );

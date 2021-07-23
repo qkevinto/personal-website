@@ -1,7 +1,7 @@
 import React from 'react';
 import striptags from 'striptags';
 
-import style from './SocialActivity.module.scss';
+import { root, content, header, username, network, loader, meta } from './SocialActivity.module.scss';
 import Loader from './Loader';
 
 export default class SocialActivity extends React.Component {
@@ -10,12 +10,12 @@ export default class SocialActivity extends React.Component {
       <div>
         {this.props.loading && !this.props.error ?
           (
-            <div className={`${style.root}`}>
-              <div className={style.header}>
-                <span className={style.username}>{this.props.username}</span>
-                <span className={style.network}>{this.props.network}</span>
+            <div className={`${root}`}>
+              <div className={header}>
+                <span className={username}>{this.props.username}</span>
+                <span className={network}>{this.props.network}</span>
               </div>
-              <div className={style.loader}>
+              <div className={loader}>
                 <Loader></Loader>
               </div>
             </div>
@@ -23,20 +23,20 @@ export default class SocialActivity extends React.Component {
           (
             <a
               href={this.props.link}
-              className={`${style.root}`}
+              className={`${root}`}
               aria-label={this.props.username + ' on ' + this.props.network + ': ' + this.props.content}
             >
-              <div className={style.header}>
-                <span className={style.username}>{this.props.username}</span>
-                <span className={style.network}>{this.props.network}</span>
+              <div className={header}>
+                <span className={username}>{this.props.username}</span>
+                <span className={network}>{this.props.network}</span>
               </div>
-              <div className={style.content}>
+              <div className={content}>
                 {(this.props.error) ? (
                   'Uh oh, looks something broke! 💩'
                 ) : striptags(this.props.content)}
               </div>
               {(typeof this.props.metaPrimary !== 'undefined' || typeof this.props.metaSecondary !== 'undefined') ? (
-                <div className={style.meta}>
+                <div className={meta}>
                   {typeof this.props.metaPrimary !== 'undefined' && this.props.metaPrimary ? (
                     <div>{this.props.metaPrimary}</div>
                   ) : undefined}
