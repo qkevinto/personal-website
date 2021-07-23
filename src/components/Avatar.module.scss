@@ -6,6 +6,9 @@
   box-shadow: inset 0 0 2px $color-shadow;
   max-width: rem(160px);
   overflow: hidden;
+  // fixes border-radius and overflow: hidden bug on Safari where the overflow:
+  // hidden does nothing
+  transform: scale(1);
 
   &:hover .image {
     transform: scale(1.1);
