@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Kevin To - Front-end Engineer'
+    title: 'Kevin To - UI Engineer'
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Kevin To - Front-end Engineer',
+        name: 'Kevin To - UI Engineer',
         short_name: 'Kevin To',
         start_url: '/',
         background_color: '#ffffff',
