@@ -17,7 +17,7 @@ export const about = `
     You can find some of my stuff on <a href="https://codepen.io/qkevinto/">CodePen</a> and <a href="https://github.com/qkevinto/">GitHub</a>.
   </p>
   <p>
-    When I’m not sat in front of the computer screen, I build and fly drones, tinker with 3D printing and electronics projects, work on my 4WD, go camping, take <a href="https://www.instagram.com/qkevinto/">photos</a>, and travel!
+    When I’m not sat in front of the computer screen, I build and fly quadcopters, tinker with 3D printing and electronics projects, work on my 4WD, go camping, take <a href="https://www.instagram.com/qkevinto/">photos</a>, and travel!
   </p>
   <p>
     Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
