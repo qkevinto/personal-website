@@ -15,7 +15,7 @@ export default class LastFm extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://pacific-caverns-68032.herokuapp.com/last-fm')
+    fetch('https://hsxvw47yof.execute-api.us-east-1.amazonaws.com/last-fm')
       .then(response => response.json())
       .then(response => {
         const latestTrack = response.recenttracks.track[0];
