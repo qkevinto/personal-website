@@ -13,12 +13,12 @@
     "striptags": "^3.2.0"
   },
   "devDependencies": {
-    "gatsby": "^3.10.1",
-    "gatsby-link": "^3.10.0",
-    "gatsby-plugin-google-analytics": "^3.10.0",
-    "gatsby-plugin-manifest": "^3.10.0",
-    "gatsby-plugin-offline": "^4.10.0",
-    "gatsby-plugin-sass": "^4.10.0",
+    "gatsby": "^4.21.1",
+    "gatsby-link": "^4.21.0",
+    "gatsby-plugin-google-analytics": "^4.21.0",
+    "gatsby-plugin-manifest": "^4.21.0",
+    "gatsby-plugin-offline": "^5.21.0",
+    "gatsby-plugin-sass": "^5.21.0",
     "gh-pages": "^2.2.0",
     "node-sass": "^6.0.1",
     "stylelint": "^13.13.1",

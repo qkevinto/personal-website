@@ -1,10 +1,12 @@
+@use 'sass:math' as math;
+
 /**
  * rem - Pixels to rem conversion
  * @param  {int} $value - pixel unit to be converted
  * @return {int} - converted rem unit.
  */
 @function rem($value) {
-  @return (strip-unit($value)/16) * 1rem;
+  @return math.div(strip-unit($value), 16) * 1rem;
 }
 
 /**
@@ -14,7 +16,7 @@
  */
 @function strip-unit($value) {
   @if type-of($value) == 'number' and not unitless($value) {
-    @return $value / ($value * 0 + 1);
+    @return math.div($value, ($value * 0 + 1));
   }
 
   @return $value;
