@@ -1,8 +1,8 @@
-const currentDate = new Date();
-const webExperienceYears =  currentDate.getFullYear() - 2012;
-export const name = 'Kevin To';
-export const role = 'UI Engineering Team Lead';
-export const work = '<a href="https://nurturecloud.com/">NurtureCloud</a> in Sydney, AU';
+const currentDate = new Date()
+const webExperienceYears =  currentDate.getFullYear() - 2012
+export const name = 'Kevin To'
+export const role = 'UI Engineering Team Lead'
+export const work = '<a href="https://nurturecloud.com/">NurtureCloud</a> in Sydney, AU'
 export const about = `
   <p>
     My previous roles include <strong>Front-end Engineer</strong> at <a href="https://upside.com.au/">Upside</a>, <strong>Lead Front-end Developer</strong> at <a href="https://www.okendo.io/">Okendo</a> and <strong>Front-end Developer, Team Lead</strong> at <a href="https://www.freelancer.com/">Freelancer.com</a>.
@@ -22,4 +22,4 @@ export const about = `
   <p>
     Feel free to say g’day at <a href="mailto:hello@kevinto.me">hello@kevinto.me</a> or connect with me on <a href="https://au.linkedin.com/in/qkevinto">LinkedIn</a>.
   </p>
-`;
+`

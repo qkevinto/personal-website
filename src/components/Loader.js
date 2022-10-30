@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
-import { root } from './Loader.module.scss';
+import { root } from './Loader.module.scss'
 
-export default class Loader extends React.Component {
-  render() {
-    return (
-      <div className={root}></div>
-    );
-  }
+const Loader = () => {
+  return (
+    <div className={root}></div>
+  )
 }
+
+export default Loader
