@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { root, image } from './Avatar.module.scss';
-import * as content from '../utils/content';
+import * as content from '../data/content';
 import avatarImage from '../images/avatar.jpg'
 
 export default class Avatar extends React.Component {

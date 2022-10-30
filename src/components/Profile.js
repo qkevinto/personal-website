@@ -2,7 +2,7 @@ import React from 'react';
 
 import { avatar, name, role, work } from './Profile.module.scss';
 import Avatar from './Avatar';
-import * as content from '../utils/content';
+import * as content from '../data/content';
 
 export default class Profile extends React.Component {
   render() {

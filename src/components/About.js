@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { root, profile } from './About.module.scss';
-import * as content from '../utils/content';
+import * as content from '../data/content';
 import Profile from './Profile';
 
 export default class About extends React.Component {

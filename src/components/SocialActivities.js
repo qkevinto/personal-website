@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { root, header, heading, list, listItem } from './SocialActivities.module.scss';
-import * as content from '../utils/content';
+import * as content from '../data/content';
 import Github from './Github';
 import Trakt from './Trakt';
 import LastFm from './LastFm';
