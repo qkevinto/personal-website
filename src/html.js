@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Helmet } from 'react-helmet';
 
 export default class HTML extends React.Component {
   static propTypes = {
@@ -8,8 +7,6 @@ export default class HTML extends React.Component {
   }
 
   render() {
-    const head = Helmet.rewind()
-
     return (
       <html lang="en">
         <head>
@@ -20,8 +17,6 @@ export default class HTML extends React.Component {
             content="width=device-width, initial-scale=1.0"
           />
           {this.props.headComponents}
-          {head.title.toComponent()}
-          {head.meta.toComponent()}
         </head>
         <body>
           <div
