@@ -1,25 +1,23 @@
-import React from 'react';
-import formatDistanceToNow from 'date-fns/formatDistanceToNow';
+import React, { useState, useEffect } from 'react'
+import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
-import SocialActivity from './SocialActivity';
+import SocialActivity from './SocialActivity'
 
-export default class Github extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      appURL: 'https://github.com/',
-      loading: true,
-      error: false,
-      username: 'qkevinto',
-      network: 'GitHub',
-    };
-  }
+const GitHub = () => {
+  const appURL = 'https://github.com/'
+  const username = 'qkevinto'
+  const network = 'GitHub'
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(false)
+  const [content, setContent] = useState(null)
+  const [link, setLink] = useState(null)
+  const [metaPrimary, setMetaPrimary] = useState(null)
 
-  componentDidMount() {
-    fetch(`https://api.github.com/users/${this.state.username}/events`)
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${username}/events`)
       .then(response => response.json())
       .then(response => {
-        const latestEvent = response[0];
+        const latestEvent = response[0]
 
         /**
          * Maps a bunch of eventTypes that GitHub returns into some readable
@@ -40,35 +38,30 @@ export default class Github extends React.Component {
           'PushEvent': 'Pushed changes to',
           'ReleaseEvent': 'Created a new release for',
           'WatchEvent': 'Starred'
-        };
+        }
 
-        this.setState({
-          loading: false,
-          content: `${eventType[latestEvent.type]} ${latestEvent.repo.name}`,
-          link: `${this.state.appURL}${latestEvent.repo.name}`,
-          metaPrimary: formatDistanceToNow(new Date(latestEvent.created_at), {addSuffix: true})
-        });
+        setLoading(false)
+        setContent(`${eventType[latestEvent.type]} ${latestEvent.repo.name}`)
+        setLink(`${appURL}${latestEvent.repo.name}`)
+        setMetaPrimary(formatDistanceToNow(new Date(latestEvent.created_at), {addSuffix: true}))
       })
       .catch((error) => {
-        throw new Error(error);
+        setError(true)
+        throw new Error(error)
+      })
+  })
 
-        this.setState({
-          error: true
-        });
-      });
-  }
-
-  render() {
-    return (
-      <SocialActivity
-        loading={this.state.loading}
-        error={this.state.error}
-        link={this.state.link}
-        username={this.state.username}
-        network={this.state.network}
-        content={this.state.content}
-        link={this.state.link}
-        metaPrimary={this.state.metaPrimary}></SocialActivity>
-    );
-  }
+  return (
+    <SocialActivity
+      loading={loading}
+      error={error}
+      link={link}
+      username={username}
+      network={network}
+      content={content}
+      metaPrimary={metaPrimary}>
+    </SocialActivity>
+  )
 }
+
+export default GitHub
