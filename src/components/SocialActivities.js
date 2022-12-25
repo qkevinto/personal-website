@@ -5,6 +5,7 @@ import * as content from '../data/content'
 import GitHub from './GitHub'
 import Trakt from './Trakt'
 import LastFm from './LastFm'
+import WaniKani from './WaniKani'
 
 const SocialActivities = () => {
   return (
@@ -21,6 +22,9 @@ const SocialActivities = () => {
         </li>
         <li className={listItem}>
           <Trakt></Trakt>
+        </li>
+        <li className={listItem}>
+          <WaniKani></WaniKani>
         </li>
       </ul>
     </aside>
