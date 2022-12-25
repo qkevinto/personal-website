@@ -5,7 +5,6 @@ import formatDistanceToNow from 'date-fns/formatDistanceToNow'
 
 const Trakt = () => {
   const appURL = 'https://trakt.tv'
-  const clientID = '0e48d28b25a45e5845b4f49b2a079bdacf0f966ce676b4be84002941bc6cee59'
   const username = 'kevin'
   const network = 'Trakt'
   const [loading, setLoading] = useState(true)
@@ -15,12 +14,7 @@ const Trakt = () => {
   const [metaPrimary, setMetaPrimary] = useState(null)
 
   useEffect(() => {
-    fetch(`https://api-v2launch.trakt.tv/users/${username}/history`, {
-      headers: {
-        'trakt-api-version': 2,
-        'trakt-api-key': clientID
-      }
-    })
+    fetch('https://hsxvw47yof.execute-api.us-east-1.amazonaws.com/trakt')
       .then(response => response.json())
       .then(response => {
         const latestActivity = response[0]
@@ -45,7 +39,7 @@ const Trakt = () => {
           } else if (latestActivity.movie) {
             return `${appURL}/movies/${latestActivity.movie.ids.slug}`
           }
-        })()),
+        })())
         setMetaPrimary(formatDistanceToNow(new Date(latestActivity.watched_at), {addSuffix: true}))
       })
       .catch(() => {
