@@ -23,9 +23,8 @@ const LastFm = () => {
         setLink(latestTrack.url)
         setMetaPrimary(`${latestTrack['@attr'] && latestTrack['@attr'].nowplaying ? 'Now playing' : formatDistanceToNow(new Date(latestTrack.date.uts * 1000), {addSuffix: true})}`)
       })
-      .catch(error => {
+      .catch(() => {
         setError(true)
-        throw new Error(error)
       })
   })
 

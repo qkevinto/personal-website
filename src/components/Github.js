@@ -45,9 +45,8 @@ const GitHub = () => {
         setLink(`${appURL}${latestEvent.repo.name}`)
         setMetaPrimary(formatDistanceToNow(new Date(latestEvent.created_at), {addSuffix: true}))
       })
-      .catch((error) => {
+      .catch(() => {
         setError(true)
-        throw new Error(error)
       })
   })
 

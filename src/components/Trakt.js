@@ -48,9 +48,8 @@ const Trakt = () => {
         })()),
         setMetaPrimary(formatDistanceToNow(new Date(latestActivity.watched_at), {addSuffix: true}))
       })
-      .catch(error => {
+      .catch(() => {
         setError(true)
-        throw new Error(error)
       })
   })
 
