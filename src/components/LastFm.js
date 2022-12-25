@@ -26,7 +26,7 @@ const LastFm = () => {
       .catch(() => {
         setError(true)
       })
-  })
+  }, [])
 
   return (
     <SocialActivity

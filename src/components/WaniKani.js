@@ -23,7 +23,7 @@ const WaniKani = () => {
       .catch(() => {
         setError(true)
       })
-  })
+  }, [])
 
   return (
     <SocialActivity

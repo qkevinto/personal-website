@@ -48,7 +48,7 @@ const GitHub = () => {
       .catch(() => {
         setError(true)
       })
-  })
+  }, [])
 
   return (
     <SocialActivity

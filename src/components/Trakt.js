@@ -45,7 +45,7 @@ const Trakt = () => {
       .catch(() => {
         setError(true)
       })
-  })
+  }, [])
 
   return (
     <SocialActivity
