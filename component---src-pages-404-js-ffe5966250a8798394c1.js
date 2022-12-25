@@ -1,2 +1,0 @@
-(self.webpackChunkkevinto_me=self.webpackChunkkevinto_me||[]).push([[883],{9616:function(e,n,t){"use strict";t.r(n);var u=t(7294);n.default=function(){return u.createElement("main",null,u.createElement("h1",null,"Page not found"))}}}]);
-//# sourceMappingURL=component---src-pages-404-js-ffe5966250a8798394c1.js.map
