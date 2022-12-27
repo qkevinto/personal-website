@@ -16,7 +16,7 @@ const WaniKani = () => {
       .then(response => {
         setLoading(false)
         setContent((() => {
-          return `${response.total_count} kanji memorised`
+          return `${response.total_count} kanji learnt`
         })())
         setMetaPrimary(formatDistanceToNow(new Date(response.data_updated_at), {addSuffix: true}))
       })

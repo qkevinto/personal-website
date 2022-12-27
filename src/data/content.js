@@ -1,5 +1,6 @@
 const currentDate = new Date()
-const webExperienceYears =  currentDate.getFullYear() - 2012
+const webExperienceYears = currentDate.getFullYear() - 2012
+const iOSExperienceYears = currentDate.getFullYear() - 2020
 export const name = 'Kevin To'
 export const role = 'UI Engineering Team Lead'
 export const work = '<a href="https://nurturecloud.com/">NurtureCloud</a> in Sydney, AU'
@@ -11,10 +12,7 @@ export const about = `
   I build stuff for the web and iOS with a background in design — I studied and worked as a Graphic Designer for about 6 years and now enjoy building accessible and maintainable web and iOS apps.
   </p>
   <p>
-  I've been working with the web for about ${webExperienceYears} years with a heavy focus on Angular, TypeScript and RxJS. And for the past year and a bit, iOS using Swift and SwiftUI along with RxSwift and Combine.
-  </p>
-  <p>
-    You can find some of my stuff on <a href="https://codepen.io/qkevinto/">CodePen</a> and <a href="https://github.com/qkevinto/">GitHub</a>.
+  I've been working with the web for about ${webExperienceYears} years with a heavy focus on Angular, TypeScript and RxJS. And for the past ${iOSExperienceYears} years, iOS using Swift and SwiftUI along with RxSwift and Combine.
   </p>
   <p>
     When I’m not sat in front of the computer screen, I build and fly quadcopters, tinker with 3D printing and electronics projects, work on my 4WD, go camping, take <a href="https://www.instagram.com/qkevinto/">photos</a>, and travel!
