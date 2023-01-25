@@ -4,9 +4,9 @@
   "version": "2.0.0",
   "author": "Kevin To <qkevinto@gmail.com>",
   "dependencies": {
-    "date-fns": "^2.23.0",
-    "ellipsize": "^0.1.0",
-    "eslint": "^7.31.0",
+    "date-fns": "^2.29.3",
+    "ellipsize": "^0.5.1",
+    "eslint": "^8.32.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "striptags": "^3.2.0"
@@ -18,10 +18,10 @@
     "gatsby-plugin-manifest": "^5.5.0",
     "gatsby-plugin-offline": "^6.5.0",
     "gatsby-plugin-sass": "^6.5.0",
-    "gh-pages": "^2.2.0",
-    "node-sass": "^7.0.1",
-    "stylelint": "^13.13.1",
-    "webpack": "^5.46.0"
+    "gh-pages": "^5.0.0",
+    "node-sass": "^8.0.0",
+    "stylelint": "^14.16.1",
+    "webpack": "^5.75.0"
   },
   "keywords": [
     "gatsby"
