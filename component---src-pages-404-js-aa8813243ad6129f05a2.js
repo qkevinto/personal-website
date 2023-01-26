@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpersonal_website=self.webpackChunkpersonal_website||[]).push([[883],{429:function(e,n,l){l.r(n);var t=l(7294);n.default=()=>t.createElement("main",null,t.createElement("h1",null,"Page not found"))}}]);
+//# sourceMappingURL=component---src-pages-404-js-aa8813243ad6129f05a2.js.map
