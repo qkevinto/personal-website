@@ -24,12 +24,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-offline',
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-22787959-1',
-      },
-    },
     'gatsby-plugin-sass'
   ]
 }
