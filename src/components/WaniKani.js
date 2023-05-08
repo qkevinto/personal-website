@@ -29,7 +29,7 @@ const WaniKani = () => {
     <SocialActivity
       loading={loading}
       error={error}
-      link='http://wanikani.com'
+      link='https://www.wanikani.com/users/qkevinto'
       network={network}
       content={content}
       metaPrimary={metaPrimary}>
