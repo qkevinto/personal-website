@@ -23,9 +23,6 @@ const SocialActivities = () => {
         <li className={listItem}>
           <Trakt></Trakt>
         </li>
-        <li className={listItem}>
-          <WaniKani></WaniKani>
-        </li>
       </ul>
     </aside>
   )

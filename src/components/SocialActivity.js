@@ -18,7 +18,7 @@ const SocialActivity = (props) => {
       {headerContent}
       <div className={content}>
         {(props.error) ? (
-          'Uh oh, looks something broke! 💩'
+          'Uh oh, looks like something broke! 💩'
         ) : striptags(props.content)}
       </div>
       {(typeof props.metaPrimary !== 'undefined' || typeof props.metaSecondary !== 'undefined') ? (
