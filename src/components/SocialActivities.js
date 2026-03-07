@@ -3,9 +3,7 @@ import React from 'react'
 import { root, header, heading, list, listItem } from './SocialActivities.module.scss'
 import * as content from '../data/content'
 import GitHub from './GitHub'
-import Trakt from './Trakt'
 import LastFm from './LastFm'
-import WaniKani from './WaniKani'
 
 const SocialActivities = () => {
   return (
@@ -19,9 +17,6 @@ const SocialActivities = () => {
         </li>
         <li className={listItem}>
           <LastFm></LastFm>
-        </li>
-        <li className={listItem}>
-          <Trakt></Trakt>
         </li>
       </ul>
     </aside>
