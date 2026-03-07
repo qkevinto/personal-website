@@ -1,13 +1,12 @@
-/**
- * font-size
- * @param  {int|list} $font-size - Font size integer or list with line-height.
- */
-@mixin font-size($font-size) {
-  @if type-of($font-size) == "list" {
-    font-size: nth($font-size, 1);
+@use 'sass:meta';
+@use 'sass:list';
 
-    @if (length($font-size) > 1) {
-      line-height: nth($font-size, 2);
+@mixin font-size($font-size) {
+  @if meta.type-of($font-size) == "list" {
+    font-size: list.nth($font-size, 1);
+
+    @if (list.length($font-size) > 1) {
+      line-height: list.nth($font-size, 2);
     }
   }
 

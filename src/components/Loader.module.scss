@@ -1,4 +1,4 @@
-@import '../css/variables';
+@use '../css/variables' as *;
 
 .root {
   animation: loader 0.5s linear infinite;

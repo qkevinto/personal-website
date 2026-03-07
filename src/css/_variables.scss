@@ -1,8 +1,5 @@
-@import './utilities';
+@use './utilities' as *;
 
-/**
- * Color Variables
- */
 $color-grey-light: rgba(0,0,0,0.35);
 $color-accent: rgba(221,94,137,0.6);
 $color-accent-light: rgba(247,187,151,0.6);
@@ -14,21 +11,15 @@ $color-text-variant: var(--color-text-variant);
 $color-border: var(--color-border);
 $color-shadow: $color-grey-light;
 
-/**
- * General Purpose Variables
- */
 $breakpoint: rem(960px);
 
-/**
- * Typograhic Variables
- */
 $font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
-$font-size-xsmall: 0.75rem, 1.6; /* 12px */
-$font-size-small: 0.875rem, 1.6; /* 14px */
-$font-size-normal: 1.125rem, 1.6; /* 18px */
-$font-size-medium: 1.25rem, 1.6; /* 20px */
-$font-size-large: 1.5rem, 1.6; /* 24px */
+$font-size-xsmall: 0.75rem, 1.6;
+$font-size-small: 0.875rem, 1.6;
+$font-size-normal: 1.125rem, 1.6;
+$font-size-medium: 1.25rem, 1.6;
+$font-size-large: 1.5rem, 1.6;
 
 $font-size-heading1: $font-size-large;
 

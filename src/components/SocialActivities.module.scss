@@ -1,6 +1,6 @@
-@import '../css/variables';
-@import '../css/utilities';
-@import '../css/mixins';
+@use '../css/variables' as *;
+@use '../css/utilities' as *;
+@use '../css/mixins' as *;
 
 .root {
   display: flex;

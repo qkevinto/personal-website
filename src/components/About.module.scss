@@ -1,5 +1,5 @@
-@import '../css/variables';
-@import '../css/utilities';
+@use '../css/variables' as *;
+@use '../css/utilities' as *;
 
 .root {
   flex-shrink: 0;
