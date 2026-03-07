@@ -12,13 +12,13 @@
     "striptags": "^3.2.0"
   },
   "devDependencies": {
-    "gatsby": "^5.5.0",
-    "gatsby-link": "^5.5.0",
-    "gatsby-plugin-manifest": "^5.5.0",
-    "gatsby-plugin-offline": "^6.5.0",
-    "gatsby-plugin-sass": "^6.5.0",
+    "gatsby": "^5.16.1",
+    "gatsby-link": "^5.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-offline": "^6.16.0",
+    "gatsby-plugin-sass": "^6.16.0",
     "gh-pages": "^5.0.0",
-    "node-sass": "^8.0.0",
+    "sass": "^1.77.0",
     "stylelint": "^14.16.1",
     "webpack": "^5.75.0"
   },
@@ -27,6 +27,9 @@
   ],
   "license": "MIT",
   "main": "n/a",
+  "overrides": {
+    "lmdb": "^3.5.1"
+  },
   "scripts": {
     "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
     "test": "echo \"Error: no test specified\" && exit 1",
