@@ -12,7 +12,7 @@ export const about = `
   I build stuff for the web and iOS with a background in design — I studied and worked as a Graphic Designer for about 6 years and now enjoy building accessible and maintainable web and iOS apps.
   </p>
   <p>
-  I've been working with the web for about ${webExperienceYears} years with a heavy focus on Angular, TypeScript and RxJS. And for the past ${iOSExperienceYears} years, iOS using Swift and SwiftUI along with RxSwift and Combine.
+  I've been working with the web for about ${webExperienceYears} years with a heavy focus on Angular, TypeScript and RxJS. And for the past ${iOSExperienceYears} years, iOS using Swift and SwiftUI.
   </p>
   <p>
     When I’m not sat in front of the computer screen, I build and fly quadcopters, tinker with 3D printing and electronics projects, work on my 4WD, go camping, take <a href="https://www.instagram.com/qkevinto/">photos</a>, and travel!
