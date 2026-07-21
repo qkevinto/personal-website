@@ -1,0 +1,8 @@
+---
+import styles from './Avatar.module.scss'
+import { name } from '../data/content.js'
+---
+
+<figure class={styles.root}>
+  <img class={styles.image} src="/images/avatar.jpg" width="160" height="160" alt={'Photo of ' + name} />
+</figure>
