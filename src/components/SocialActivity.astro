@@ -1,0 +1,27 @@
+---
+import styles from './SocialActivity.module.scss'
+import Loader from './Loader.astro'
+
+const { username, network, source } = Astro.props
+---
+
+<div>
+  <a
+    class={styles.root}
+    data-activity
+    data-source={source}
+    aria-label={`${username} on ${network}`}
+  >
+    <div class={styles.header}>
+      <span class={styles.username}>{username}</span>
+      <span class={styles.network}>{network}</span>
+    </div>
+    <div class={styles.loader} data-loader>
+      <Loader />
+    </div>
+    <div class={styles.content} data-content></div>
+    <div class={styles.meta}>
+      <div data-meta></div>
+    </div>
+  </a>
+</div>

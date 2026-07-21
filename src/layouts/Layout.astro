@@ -1,0 +1,47 @@
+---
+import { siteMetadata as meta } from '../site.config.js'
+import '../styles/main.scss'
+
+const { title = meta.title } = Astro.props
+const ogImage = `${meta.url}${meta.image}`
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>{title}</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={meta.description} />
+    <meta name="keywords" content={meta.keyword} />
+    <meta name="author" content={meta.author} />
+    <meta name="apple-mobile-web-app-title" content={meta.title} />
+    <meta name="application-name" content={meta.title} />
+    <meta name="msapplication-TileColor" content={meta.themeColor} />
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png" />
+    <meta name="theme-color" content={meta.themeColor} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content={`@${meta.twitterHandle}`} />
+    <meta name="twitter:title" content={meta.title} />
+    <meta name="twitter:description" content={meta.description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta property="og:title" content={meta.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={meta.url} />
+    <meta property="og:image" content={ogImage} />
+
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/android-chrome-192x192.png" sizes="192x192" />
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+    <link rel="canonical" href={meta.url} />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <slot name="head" />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

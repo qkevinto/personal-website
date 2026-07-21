@@ -1,0 +1,120 @@
+---
+import styles from './SocialActivities.module.scss'
+import { name } from '../data/content.js'
+import SocialActivity from './SocialActivity.astro'
+---
+
+<aside class={styles.root} aria-label={`${name} 's social activities`}>
+  <header class={styles.header}>
+    <h2 class={styles.heading}>Elsewhere on the internets&hellip;</h2>
+  </header>
+  <ul class={styles.list} aria-label="Elsewhere on the internets…">
+    <li class={styles['list-item']}>
+      <SocialActivity username="qkevinto" network="GitHub" source="github" />
+    </li>
+    <li class={styles['list-item']}>
+      <SocialActivity username="qkevinto" network="last.fm" source="lastfm" />
+    </li>
+  </ul>
+</aside>
+
+<script>
+  const rtf = new Intl.RelativeTimeFormat('en', { numeric: 'auto' })
+
+  function timeAgo(date: Date) {
+    const seconds = Math.round((date.getTime() - Date.now()) / 1000)
+    const units: [Intl.RelativeTimeFormatUnit, number][] = [
+      ['year', 60 * 60 * 24 * 365],
+      ['month', 60 * 60 * 24 * 30],
+      ['day', 60 * 60 * 24],
+      ['hour', 60 * 60],
+      ['minute', 60],
+      ['second', 1],
+    ]
+
+    for (const [unit, secondsPerUnit] of units) {
+      if (Math.abs(seconds) >= secondsPerUnit || unit === 'second') {
+        return rtf.format(Math.round(seconds / secondsPerUnit), unit)
+      }
+    }
+
+    return ''
+  }
+
+  function render(
+    el: HTMLElement,
+    { content, link, meta }: { content: string; link?: string; meta?: string }
+  ) {
+    el.querySelector('[data-loader]')?.remove()
+    const contentEl = el.querySelector('[data-content]')
+    const metaEl = el.querySelector('[data-meta]')
+    if (contentEl) contentEl.textContent = content
+    if (metaEl) metaEl.textContent = meta ?? ''
+    if (link) {
+      el.setAttribute('href', link)
+      el.setAttribute('aria-label', `${el.getAttribute('aria-label')}: ${content}`)
+    }
+  }
+
+  function renderError(el: HTMLElement) {
+    el.querySelector('[data-loader]')?.remove()
+    const contentEl = el.querySelector('[data-content]')
+    if (contentEl) contentEl.textContent = 'Uh oh, looks like something broke! 💩'
+  }
+
+  const sources: Record<string, (el: HTMLElement) => Promise<void>> = {
+    async github(el) {
+      const username = 'qkevinto'
+      const response = await fetch(`https://api.github.com/users/${username}/events`)
+      const events = await response.json()
+      const latestEvent = Array.isArray(events) ? events[0] : null
+      if (!latestEvent) throw new Error('No recent GitHub activity')
+
+      /**
+       * Maps a bunch of eventTypes that GitHub returns into some readable
+       * and more coherent strings.
+       */
+      const eventType: Record<string, string> = {
+        CommitCommentEvent: 'Commented on a commit in',
+        CreateEvent: 'Created',
+        DeleteEvent: 'Deleted',
+        ForkEvent: 'Forked',
+        GollumEvent: 'Changed Wiki for',
+        IssueCommentEvent: 'Changed issue comment in',
+        IssuesEvent: 'Changed an issue in',
+        MemberEvent: 'Changed members in',
+        PublicEvent: 'Made public: ',
+        PullRequestEvent: 'Made a pull request to',
+        PullRequestReviewCommentEvent: 'Commented on a pull request in',
+        PushEvent: 'Pushed changes to',
+        ReleaseEvent: 'Created a new release for',
+        WatchEvent: 'Starred',
+      }
+
+      render(el, {
+        content: `${eventType[latestEvent.type] ?? 'Active in'} ${latestEvent.repo.name}`,
+        link: `https://github.com/${latestEvent.repo.name}`,
+        meta: timeAgo(new Date(latestEvent.created_at)),
+      })
+    },
+
+    async lastfm(el) {
+      const response = await fetch('https://hsxvw47yof.execute-api.us-east-1.amazonaws.com/last-fm')
+      const data = await response.json()
+      const latestTrack = data.recenttracks.track[0]
+      const nowPlaying = latestTrack['@attr'] && latestTrack['@attr'].nowplaying
+
+      render(el, {
+        content: `${latestTrack.name} - ${latestTrack.artist['#text']}`,
+        link: latestTrack.url,
+        meta: nowPlaying ? 'Now playing' : timeAgo(new Date(latestTrack.date.uts * 1000)),
+      })
+    },
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-activity]').forEach((el) => {
+    const source = sources[el.dataset.source ?? '']
+    if (!source) return
+    source(el).catch(() => renderError(el))
+  })
+</script>

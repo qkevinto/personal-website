@@ -1,41 +1,29 @@
 {
   "name": "personal-website",
   "description": "Kevin To's person website",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "author": "Kevin To <qkevinto@gmail.com>",
+  "type": "module",
   "dependencies": {
-    "date-fns": "^2.29.3",
-    "ellipsize": "^0.5.1",
-    "eslint": "^8.32.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "striptags": "^3.2.0"
+    "astro": "^5.13.0"
   },
   "devDependencies": {
-    "gatsby": "^5.16.1",
-    "gatsby-link": "^5.16.0",
-    "gatsby-plugin-manifest": "^5.16.0",
-    "gatsby-plugin-offline": "^6.16.0",
-    "gatsby-plugin-sass": "^6.16.0",
-    "gh-pages": "^5.0.0",
+    "gh-pages": "^6.1.1",
     "sass": "^1.77.0",
-    "stylelint": "^14.16.1",
-    "webpack": "^5.75.0"
+    "stylelint": "^14.16.1"
   },
   "keywords": [
-    "gatsby"
+    "astro"
   ],
   "license": "MIT",
   "main": "n/a",
-  "overrides": {
-    "lmdb": "^3.5.1"
-  },
   "scripts": {
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx --ignore-pattern public .",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "develop": "gatsby develop",
-    "build": "gatsby build",
-    "deploy": "gatsby build && gh-pages -d public",
-    "clean": "gatsby clean"
+    "dev": "astro dev",
+    "develop": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && gh-pages -d dist -t",
+    "clean": "rm -rf dist .astro"
   }
 }

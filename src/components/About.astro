@@ -1,0 +1,12 @@
+---
+import styles from './About.module.scss'
+import Profile from './Profile.astro'
+import { about } from '../data/content.js'
+---
+
+<section class={styles.root}>
+  <div class={styles.profile}>
+    <Profile />
+  </div>
+  <div set:html={about}></div>
+</section>
